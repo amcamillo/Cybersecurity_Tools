@@ -1,0 +1,8 @@
+```KQL query to list results in local time instead of UTC
+let timeZone='US/Eastern';
+let currentDateTime = datetime(08/21/2022, 09:15:14.777 AM);
+let localToUTC = datetime_local_to_utc(currentDateTime,timeZone);
+Heartbeat
+| where TimeGenerated == localToUTC
+
+```source: https://garybushey.com/2022/08/21/using-local-time-in-microsoft-sentinel-queries/
