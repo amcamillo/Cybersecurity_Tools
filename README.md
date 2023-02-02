@@ -53,7 +53,8 @@ Categories:
   - 2. Tails
 
 🕸️ Web
-- N/A
+- URL Scan
+  - 1. https://urlscan.io/
 
 💻 Endpoint
 - Endpoint EDR
