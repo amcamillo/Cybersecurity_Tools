@@ -1,10 +1,10 @@
 # This Repo continas links to public Solution Demos I delivered/recorded/documented.
 
 MITRE
-- [Caldera Setup and Usage] (https://youtu.be/Tq5QKw8VXjQ?si=aj82lQrLTnPWh_nS)
+- [[Caldera Setup and Usage]([url](https://youtu.be/Tq5QKw8VXjQ?si=aj82lQrLTnPWh_nS))
 
 Sentinel
-- [Setup] (https://youtu.be/LdYkcM3aZFs?si=zH4KUpUX2zJue2eY)
+- [Setup] (https://youtu.be/LdYkcM3aFs?si=zH4KUpUX2zJue2eY)
 - [Data Connectors] (https://youtu.be/mGLs-6hEGdY?si=7gNF7hzT3HpPrU1K)
 - [Analytics Rules] (https://youtu.be/WOXjnpasTfU?si=fziXWNgjbROaDX4g)
 - [Incident Management Overview] (https://youtu.be/nT5JOzoUzVI?si=TsrwuZIPk8T1VAKv)
@@ -24,16 +24,13 @@ Defender XDR
 
   Defender for Cloud Apps
   - [Defender for Cloud Apps overview and Chat GPT Monitoring] (https://youtu.be/8ysJBowXzGU?si=3_7wCqsqZ1lPCeMX)
-  - 
 
 Purview
 - [Purview Overview] (https://youtu.be/uQJNsKT0uGs?si=AvnsYEySOyR5C5tT)
 
   Information Protection
   - [Information Protection Overview] (https://youtu.be/uedcUFwRFvQ?si=W9m1JKajlxh-RKOo)
-  - 
 
   Data Loss Prevention
   - [Data Loss Prevention Overview] (https://youtu.be/Ehldbyk7lYk?si=fJ1gREwPuf_Zt90I)
   - [Endpoint DLP Demo Overview] (https://youtu.be/MLb7zy26FiE?si=UdpZQW0P9fuEvNDe)
-  - 
