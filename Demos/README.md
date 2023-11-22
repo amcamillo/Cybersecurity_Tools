@@ -1,4 +1,4 @@
-# This Repo continas links to public Solution Demos I delivered/recorded/documented.
+# This Repo contains links to public Solution Demos I delivered/recorded/documented.
 
 MITRE
 - [Caldera Setup and Usage](https://youtu.be/Tq5QKw8VXjQ?si=aj82lQrLTnPWh_nS)
