@@ -1,0 +1,3 @@
+EasmRisk_CL 
+| where CategoryName_s contains "High Severity"
+| project MetricDisplayName_s, AssetCount_d, AssetType_s, AssetName_s
