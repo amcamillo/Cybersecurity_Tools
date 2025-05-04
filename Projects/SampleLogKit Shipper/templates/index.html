@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Use the title passed from Flask -->
+    <title>{{ app_title }}</title>
+    <style>
+        /* (CSS remains the same) */
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 900px; margin: auto; background-color: #f4f4f4; color: #333; }
+        h1 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 10px; }
+        #container { background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; }
+        input[type="text"], input[type="password"], select { width: 95%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; box-sizing: border-box; }
+        input[type="password"] { font-family: monospace; }
+        button { background-color: #28a745; color: white; padding: 12px 25px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; transition: background-color 0.3s ease; }
+        button:hover { background-color: #218838; }
+        button:disabled { background-color: #aaa; cursor: not-allowed; }
+        #response { margin-top: 25px; padding: 15px; border-radius: 4px; border: 1px solid transparent; }
+        .status-summary { font-weight: bold; font-size: 1.1em; margin-bottom: 10px; }
+        .status-details ul { list-style: none; padding-left: 0; }
+        .status-details li { margin-bottom: 8px; padding: 8px; border-radius: 3px; }
+        .status-success { background-color: #d4edda; color: #155724; border-left: 5px solid #28a745; }
+        .status-error { background-color: #f8d7da; color: #721c24; border-left: 5px solid #dc3545; }
+        .overall-success { border-color: #28a745; background-color: #e9f7ec; color: #155724; }
+        .overall-partial { border-color: #ffc107; background-color: #fff8e1; color: #856404; }
+        .overall-error { border-color: #dc3545; background-color: #fdecea; color: #721c24; }
+        pre { background-color: #e9ecef; padding: 10px; border: 1px solid #ced4da; border-radius: 4px; white-space: pre-wrap; word-wrap: break-word; font-size: 0.9em; max-height: 200px; overflow-y: auto; }
+        small { color: #6c757d; display: block; margin-top: -15px; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <!-- Use the title passed from Flask -->
+        <h1>{{ app_title }}</h1>
+        <p>Send simulated ATT&CK event chains to a CrowdStrike Falcon LogScale HEC endpoint.</p>
+
+        <form id="logForm">
+            <!-- Form fields remain the same -->
+            <div><label for="hec_url">HEC URL:</label><input type="text" id="hec_url" name="hec_url" placeholder="e.g., https://your-falcon-instance.crowdstrike.com/api/v1/humio-structured" required><small>Use `/api/v1/humio-structured` (preferred) or `/services/collector/event`.</small></div>
+            <div><label for="hec_token">HEC Token:</label><input type="password" id="hec_token" name="hec_token" required></div>
+            <div><label for="scenario">Select Attack Chain Scenario:</label><select id="scenario" name="scenario" required><option value="" disabled selected>-- Select a Chain --</option>{% for chain_key, display_name in scenarios.items() %}<option value="{{ chain_key }}">{{ display_name }}</option>{% endfor %}</select></div>
+            <button type="submit" id="sendButton">Send Event Chain</button>
+        </form>
+
+        <div id="response"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('logForm'); const responseDiv = document.getElementById('response'); const sendButton = document.getElementById('sendButton');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault(); responseDiv.innerHTML = ''; responseDiv.className = ''; sendButton.disabled = true; sendButton.textContent = 'Sending Chain...';
+            const formData = new FormData(form); const data = Object.fromEntries(formData.entries());
+            try {
+                const response = await fetch('/send_log', { method: 'POST', headers: { 'Content-Type': 'application/json', }, body: JSON.stringify(data), });
+                // Attempt to parse JSON regardless of status code for backend errors
+                let result; try { result = await response.json(); } catch (parseError) { result = { error: "Failed to parse server response.", details: `Status: ${response.status}. Response Text: ${await response.text().catch(()=>'(Could not read response text)')}` }; }
+
+                // Now check the result object from backend (or the parse error)
+                let responseHTML = `<div class="status-summary">${result.message || (result.error ? 'Error received from server' : 'Received response')} (HTTP ${response.status})</div>`;
+                if (result.results && Array.isArray(result.results)) {
+                    responseHTML += '<div class="status-details"><ul>'; result.results.forEach(stepResult => { responseHTML += `<li class="${stepResult.status === 'success' ? 'status-success' : 'status-error'}"><strong>Step ${stepResult.step}:</strong> ${stepResult.status.toUpperCase()}`; if (stepResult.status === 'success') { responseHTML += ` (HTTP ${stepResult.http_status}) - HEC: ${JSON.stringify(stepResult.hec_response)}`; } else { responseHTML += ` - Error: ${stepResult.error || 'Unknown'}`; if(stepResult.details) responseHTML += `<br><small>Details: ${stepResult.details}</small>`; } responseHTML += `</li>`; }); responseHTML += '</ul></div>';
+                } else if (result.error) { responseHTML += `<div class="status-details"><p class="status-error"><strong>Error:</strong> ${result.error}<br>${result.details ? `<pre>${result.details}</pre>` : ''}</p></div>`; }
+                if (result.sent_payloads_sample && result.sent_payloads_sample.length > 0) { responseHTML += `<div><strong>Sample Payload Sent (Step 1):</strong><pre>${JSON.stringify(result.sent_payloads_sample[0], null, 2)}</pre></div>`; }
+
+                if (response.ok && result.message) { // Check if response.ok (status 200-299) AND we have a success/partial message
+                    responseDiv.className = response.status === 207 ? 'overall-partial' : 'overall-success';
+                } else { // Treat non-ok responses or responses without a success message as errors
+                    responseDiv.className = 'overall-error';
+                }
+                responseDiv.innerHTML = responseHTML;
+            } catch (error) { // Catch network errors or JS errors before/during fetch
+                responseDiv.className = 'overall-error';
+                responseDiv.innerHTML = `<div class="status-summary">JavaScript or Network Error</div><div class="status-details"><p>An error occurred: ${error.message}</p><pre>${error.stack || '(No stack trace)'}</pre></div>`; // Show stack
+            } finally { sendButton.disabled = false; sendButton.textContent = 'Send Event Chain'; }
+        });
+    </script>
+</body>
+</html>
