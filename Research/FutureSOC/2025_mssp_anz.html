@@ -1,340 +1,563 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2025: The State of MSSP Across Australia and New Zealand</title>
-    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-    <script src="[https://cdn.jsdelivr.net/npm/chart.js](https://cdn.jsdelivr.net/npm/chart.js)"></script>
-    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-    <link href="[https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap](https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap)" rel="stylesheet">
+    <title>2025: The State of MSSP across Australia and New Zealand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Strategic Teal & Graphite -->
+    <!-- Application Structure Plan: The application is structured as a narrative journey for an MSP decision-maker. It starts with the "Why" (Market Opportunity), moves to the "What" (Threats & Modern SOC Blueprint), then the "How" (Compliance & KPIs), and finally the "Payoff" (Financials & Strategy). This thematic flow is more intuitive than the report's linear structure. A sticky top navigation allows users to jump to sections of interest, supporting both linear reading and non-linear exploration. Key interactions include toggling data between AU and NZ, clicking on tech stack components to reveal details, and interacting with charts to understand the financial implications, making the data digestible and directly relevant to strategic planning. -->
+    <!-- Visualization & Content Choices: Market Growth: Replaced bar chart with stat cards for clearer percentage growth representation. Threat Landscape: Replaced charts with sourced, descriptive lists of top threats from vendor reports for better accuracy and clarity. Modern SOC Stack: An interactive diagram using HTML/CSS grid to visually represent the converged platform, with JS click events to display detailed info. Compliance: An interactive table distills dense regulatory info. KPIs: A dynamic "Dwell Time" calculator (JS) to tangibly demonstrate the value of low MTTR/MTTD. Financials: Bar chart for talent costs and interactive cards for pricing models to clarify complex financial data. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f0f2f5;
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #334155; /* slate-700 */
         }
-        :root {
-            --primary-color: #4f46e5;
-            --secondary-color: #7c3aed;
-            --accent-color: #10b981;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #ffffff;
-            --bg-dark: #111827;
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
         }
-       .gradient-text {
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
         }
-       .material-card {
-            background-color: var(--bg-light);
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #0d9488; /* teal-600 */
+        }
+        .section-card {
+            background-color: white;
             border-radius: 0.75rem;
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            transition: all 0.3s ease-in-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-       .material-card:hover {
+        .section-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
         }
-       .icon-bg {
-            background-color: #e0e7ff;
+        .tab-button.active {
+            border-color: #0d9488;
+            color: #0d9488;
+            font-weight: 600;
+        }
+        .tech-stack-item.active {
+            background-color: #ccfbf1; /* teal-100 */
+            border-left-color: #0d9488; /* teal-600 */
+        }
+        .kpi-card {
+            border-left: 4px solid #0d9488; /* teal-600 */
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #f0f9ff 0%, #f0fdfa 100%);
         }
     </style>
 </head>
-<body class="text-text-dark">
+<body class="antialiased">
 
-    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+    <header id="header" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-slate-800">MSSP ANZ 2025</h1>
+            <div class="hidden md:flex space-x-8">
+                <a href="#opportunity" class="nav-link text-slate-600">Opportunity</a>
+                <a href="#threats" class="nav-link text-slate-600">Threats</a>
+                <a href="#blueprint" class="nav-link text-slate-600">Blueprint</a>
+                <a href="#compliance" class="nav-link text-slate-600">Compliance</a>
+                <a href="#performance" class="nav-link text-slate-600">Performance</a>
+                <a href="#financials" class="nav-link text-slate-600">Financials</a>
+                <a href="#roadmap" class="nav-link text-slate-600">Roadmap</a>
+            </div>
+        </nav>
+    </header>
 
-        <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-6xl font-extrabold gradient-text mb-2">2025: The State of MSSP</h1>
-            <h2 class="text-2xl md:text-3xl font-bold text-text-dark">Across Australia & New Zealand</h2>
-            <p class="mt-4 text-lg text-text-light max-w-3xl mx-auto">A strategic guide for MSPs navigating the shift to security. The market is demanding more than just IT support—it's demanding resilience. This is your roadmap to building a modern, profitable security practice.</p>
-        </header>
+    <main>
+        <section id="hero" class="hero-gradient py-16 sm:py-24">
+            <div class="container mx-auto px-6 text-center">
+                <p class="text-base font-semibold text-teal-600">A Strategic Blueprint for Australia & New Zealand</p>
+                <h2 class="mt-2 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">Forging the Modern MSSP</h2>
+                <p class="mt-6 max-w-3xl mx-auto text-lg text-slate-600">An interactive guide to building a profitable, high-efficacy Security Operations Center in the dynamic ANZ market. Explore the data, understand the trends, and chart your path to success.</p>
+            </div>
+        </section>
 
-        <section class="mb-16">
-            <h3 class="text-3xl font-bold text-center mb-8">The ANZ Market Opportunity is Accelerating</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <div class="material-card p-6 text-center">
-                    <p class="text-4xl font-bold text-primary-color">13.5%</p>
-                    <p class="text-text-light mt-2">Australia's Cybersecurity Market CAGR (2025-2030) [5]</p>
+        <section id="opportunity" class="py-16 sm:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-slate-900">The ANZ Market Opportunity</h3>
+                    <p class="mt-4 max-w-2xl mx-auto text-md text-slate-600">The cybersecurity landscape in Australia and New Zealand is not just growing; it's fundamentally shifting towards outsourced expertise. This section visualizes the powerful market forces creating a fertile ground for advanced MSSP services.</p>
                 </div>
-                <div class="material-card p-6 text-center">
-                    <p class="text-4xl font-bold text-primary-color">7.6%</p>
-                    <p class="text-text-light mt-2">New Zealand's Cybersecurity Market CAGR (2025-2030) [6]</p>
-                </div>
-                <div class="material-card p-6 text-center">
-                    <p class="text-4xl font-bold text-accent-color">>16%</p>
-                    <p class="text-text-light mt-2">Managed Services Growth Rate, outpacing the overall market [5]</p>
-                </div>
-                <div class="material-card p-6 text-center">
-                    <p class="text-4xl font-bold text-accent-color">92%</p>
-                    <p class="text-text-light mt-2">of NZ tech employers face a skills shortage—a key driver for outsourcing [7]</p>
+                <div class="grid md:grid-cols-2 gap-8 items-start">
+                    <div class="section-card p-6 text-center">
+                        <h4 class="text-xl font-semibold mb-2">Australia Market Growth</h4>
+                        <p class="text-sm text-slate-500 mb-4">Projected growth from 2025 to 2034</p>
+                        <p class="text-6xl font-extrabold text-teal-600">+249%</p>
+                        <p class="mt-4 text-slate-600">From <strong class="text-slate-800">AUD $9.18B</strong> to <strong class="text-slate-800">AUD $32B</strong></p>
+                        <p class="text-xs text-slate-400 mt-2">Source: Statista, Mordor Intelligence, IMARC Group</p>
+                    </div>
+                    <div class="section-card p-6 text-center">
+                        <h4 class="text-xl font-semibold mb-2">New Zealand Market Growth</h4>
+                        <p class="text-sm text-slate-500 mb-4">Projected growth from 2025 to 2030</p>
+                        <p class="text-6xl font-extrabold text-teal-600">+44%</p>
+                        <p class="mt-4 text-slate-600">From <strong class="text-slate-800">USD $572.5M</strong> to <strong class="text-slate-800">USD $825.7M</strong></p>
+                        <p class="text-xs text-slate-400 mt-2">Source: Mordor Intelligence</p>
+                    </div>
                 </div>
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div class="material-card p-6">
-                    <h4 class="text-xl font-bold mb-4">Cybersecurity Market Growth (USD Billions)</h4>
-                    <canvas id="marketGrowthChart"></canvas>
+        </section>
+
+        <section id="threats" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-slate-900">The ANZ Threat Environment</h3>
+                    <p class="mt-4 max-w-2xl mx-auto text-md text-slate-600">Effective SOC services require a deep understanding of the local threat landscape. Use the toggle below to explore the distinct yet similar threat profiles of Australia and New Zealand, focusing on prevalent threats and key attack vectors.</p>
                 </div>
-                <div class="space-y-6">
-                    <h4 class="text-2xl font-bold text-center">Key Forces Driving MSSP Demand</h4>
-                    <div class="flex items-start space-x-4">
-                        <div class="flex-shrink-0 w-12 h-12 rounded-full icon-bg flex items-center justify-center">
-                            <svg class="w-6 h-6 text-primary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-5.197-5.803"></path></svg>
+
+                <div class="flex justify-center mb-8">
+                    <div class="bg-slate-200 p-1 rounded-lg flex space-x-1">
+                        <button id="au-threat-btn" class="tab-button active px-4 py-2 rounded-md text-sm font-medium border-2 border-transparent" onclick="showThreats('au')">Australia</button>
+                        <button id="nz-threat-btn" class="tab-button px-4 py-2 rounded-md text-sm font-medium border-2 border-transparent" onclick="showThreats('nz')">New Zealand</button>
+                    </div>
+                </div>
+
+                <div id="au-threat-content" class="threat-content">
+                    <div class="section-card p-6 md:p-8">
+                        <h4 class="text-xl font-semibold mb-4">Top Threats in Australia</h4>
+                        <ul class="space-y-4">
+                            <li>
+                                <strong class="text-slate-800">1. Business Email Compromise (BEC):</strong> Remains a high-impact threat causing significant financial loss. Attackers use sophisticated social engineering to impersonate executives or suppliers to divert payments.
+                                <p class="text-xs text-slate-400 mt-1">Source: ACSC Annual Cyber Threat Report, CyberCX</p>
+                            </li>
+                            <li>
+                                <strong class="text-slate-800">2. Ransomware & Extortion:</strong> A persistent threat to businesses of all sizes, with attackers increasingly targeting critical infrastructure and supply chains, causing major operational disruption.
+                                <p class="text-xs text-slate-400 mt-1">Source: CyberCX Cyber Security Review</p>
+                            </li>
+                            <li>
+                                <strong class="text-slate-800">3. Identity & Credential Theft:</strong> Phishing and other methods are used to steal user credentials, which are then leveraged to gain initial access for broader attacks against corporate networks.
+                                <p class="text-xs text-slate-400 mt-1">Source: ACSC Annual Cyber Threat Report</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="nz-threat-content" class="threat-content hidden">
+                     <div class="section-card p-6 md:p-8">
+                        <h4 class="text-xl font-semibold mb-4">Top Threats in New Zealand</h4>
+                        <ul class="space-y-4">
+                             <li>
+                                <strong class="text-slate-800">1. Phishing & Scams:</strong> The most prevalent threat category, leading to significant direct financial losses for individuals and businesses through fraudulent requests and credential harvesting.
+                                <p class="text-xs text-slate-400 mt-1">Source: CERT NZ, Kordia Security Reports</p>
+                            </li>
+                            <li>
+                                <strong class="text-slate-800">2. Ransomware:</strong> Continues to be a major disruptive force, with attacks causing significant downtime and financial cost for New Zealand organisations.
+                                <p class="text-xs text-slate-400 mt-1">Source: Kordia Security Reports</p>
+                            </li>
+                             <li>
+                                <strong class="text-slate-800">3. Insecure Software & Systems:</strong> The exploitation of unpatched vulnerabilities and misconfigured cloud services remains a primary vector for attackers to gain initial access.
+                                <p class="text-xs text-slate-400 mt-1">Source: NCSC Threat Reports</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blueprint" class="py-16 sm:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-slate-900">Blueprint for a Modern, AI-Driven SOC</h3>
+                    <p class="mt-4 max-w-2xl mx-auto text-md text-slate-600">An effective SOC is not just a collection of tools, but a synergistic integration of technology, people, and process. This section details the components of a modern, converged security operations platform and the human expertise required to run it.</p>
+                </div>
+                <div class="section-card p-6 md:p-8">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="md:col-span-1">
+                            <h4 class="text-xl font-semibold mb-4">The Converged Tech Stack</h4>
+                            <p class="text-sm text-slate-500 mb-4">Click each component to see its function and contribution to profitability.</p>
+                            <div class="space-y-2">
+                                <div id="tech-siem" class="tech-stack-item active border-l-4 p-3 cursor-pointer" onclick="showTechInfo('siem')">
+                                    <h5 class="font-semibold">SIEM</h5>
+                                    <p class="text-xs text-slate-500">Log Collection & Compliance</p>
+                                </div>
+                                <div id="tech-soar" class="tech-stack-item border-l-4 border-transparent p-3 cursor-pointer" onclick="showTechInfo('soar')">
+                                    <h5 class="font-semibold">SOAR</h5>
+                                    <p class="text-xs text-slate-500">Automation & Response</p>
+                                </div>
+                                <div id="tech-xdr" class="tech-stack-item border-l-4 border-transparent p-3 cursor-pointer" onclick="showTechInfo('xdr')">
+                                    <h5 class="font-semibold">XDR</h5>
+                                    <p class="text-xs text-slate-500">Unified Detection</p>
+                                </div>
+                                <div id="tech-identity" class="tech-stack-item border-l-4 border-transparent p-3 cursor-pointer" onclick="showTechInfo('identity')">
+                                    <h5 class="font-semibold">Identity Security</h5>
+                                    <p class="text-xs text-slate-500">Access Control & Threat Detection</p>
+                                </div>
+                                <div id="tech-ueba" class="tech-stack-item border-l-4 border-transparent p-3 cursor-pointer" onclick="showTechInfo('ueba')">
+                                    <h5 class="font-semibold">UEBA</h5>
+                                    <p class="text-xs text-slate-500">Behavior Analytics</p>
+                                </div>
+                                <div id="tech-tip" class="tech-stack-item border-l-4 border-transparent p-3 cursor-pointer" onclick="showTechInfo('tip')">
+                                    <h5 class="font-semibold">Threat Intelligence</h5>
+                                    <p class="text-xs text-slate-500">Context & Proactive Hunting</p>
+                                </div>
+                                <div id="tech-ctem" class="tech-stack-item border-l-4 border-transparent p-3 cursor-pointer" onclick="showTechInfo('ctem')">
+                                    <h5 class="font-semibold">CTEM</h5>
+                                    <p class="text-xs text-slate-500">Attack Surface Reduction</p>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <h5 class="font-bold">The Skills Chasm</h5>
-                            <p class="text-text-light">A severe, persistent talent shortage makes building in-house 24/7 SOCs impossible for most businesses.[8, 9]</p>
+                        <div class="md:col-span-2 bg-slate-50 rounded-lg p-6">
+                            <div id="tech-info-siem" class="tech-info-content">
+                                <h4 class="text-lg font-bold text-slate-800">Security Information & Event Management (SIEM)</h4>
+                                <p class="mt-2 text-slate-600">The foundational layer that centralizes log collection, correlation, and alerting. It provides the essential visibility and audit trail for investigations and is critical for delivering compliance-as-a-service offerings.</p>
+                                <div class="mt-4 p-3 bg-teal-50 rounded-lg">
+                                    <p><strong class="text-teal-800">Profitability Driver:</strong> Essential for offering high-value compliance services and demonstrating security posture to auditors.</p>
+                                </div>
+                            </div>
+                            <div id="tech-info-soar" class="tech-info-content hidden">
+                                <h4 class="text-lg font-bold text-slate-800">Security Orchestration, Automation, & Response (SOAR)</h4>
+                                <p class="mt-2 text-slate-600">The automation engine of the SOC. SOAR integrates disparate security tools and automates incident response workflows (playbooks), drastically reducing Mean Time to Respond (MTTR) by executing manual tasks at machine speed.</p>
+                                <div class="mt-4 p-3 bg-teal-50 rounded-lg">
+                                    <p><strong class="text-teal-800">Profitability Driver:</strong> The single biggest driver of operational efficiency. Allows a single analyst to manage more clients, directly boosting profit margins.</p>
+                                </div>
+                            </div>
+                            <div id="tech-info-xdr" class="tech-info-content hidden">
+                                <h4 class="text-lg font-bold text-slate-800">Extended Detection & Response (XDR)</h4>
+                                <p class="mt-2 text-slate-600">Unifies and correlates data from endpoints, network, cloud, and identity into a single platform. It provides a holistic view of an attack, speeding up investigations and improving detection accuracy.</p>
+                                <div class="mt-4 p-3 bg-teal-50 rounded-lg">
+                                    <p><strong class="text-teal-800">Profitability Driver:</strong> Reduces tool sprawl and licensing costs while improving analyst efficiency by eliminating "swivel-chair" analysis between multiple consoles.</p>
+                                </div>
+                            </div>
+                             <div id="tech-info-identity" class="tech-info-content hidden">
+                                <h4 class="text-lg font-bold text-slate-800">Identity Security</h4>
+                                <p class="mt-2 text-slate-600">Focuses on securing user and machine identities to prevent unauthorized access. This includes Identity & Access Management (IAM), Privileged Access Management (PAM), and Identity Threat Detection & Response (ITDR) to combat credential theft and abuse—the top initial access vector.</p>
+                                <div class="mt-4 p-3 bg-teal-50 rounded-lg">
+                                    <p><strong class="text-teal-800">Profitability Driver:</strong> Directly addresses the most common attack path. Offering Identity Security services prevents costly breaches and justifies premium service tiers.</p>
+                                </div>
+                            </div>
+                             <div id="tech-info-ueba" class="tech-info-content hidden">
+                                <h4 class="text-lg font-bold text-slate-800">User & Entity Behavior Analytics (UEBA)</h4>
+                                <p class="mt-2 text-slate-600">Uses machine learning to baseline normal user and device activity, then detects anomalous behaviors that could indicate insider threats or compromised accounts that evade traditional signature-based tools.</p>
+                                <div class="mt-4 p-3 bg-teal-50 rounded-lg">
+                                    <p><strong class="text-teal-800">Profitability Driver:</strong> Enables the offering of advanced, high-margin threat detection services focused on sophisticated, hard-to-detect threats.</p>
+                                </div>
+                            </div>
+                             <div id="tech-info-tip" class="tech-info-content hidden">
+                                <h4 class="text-lg font-bold text-slate-800">Threat Intelligence Platform (TIP)</h4>
+                                <p class="mt-2 text-slate-600">Aggregates and operationalizes threat intelligence (IoCs, TTPs) from multiple sources. This data enriches alerts with context, enabling faster triage and informing proactive threat hunting exercises.</p>
+                                <div class="mt-4 p-3 bg-teal-50 rounded-lg">
+                                    <p><strong class="text-teal-800">Profitability Driver:</strong> Underpins premium service offerings like dedicated threat intelligence feeds and proactive threat hunting retainers.</p>
+                                </div>
+                            </div>
+                             <div id="tech-info-ctem" class="tech-info-content hidden">
+                                <h4 class="text-lg font-bold text-slate-800">Continuous Threat Exposure Management (CTEM)</h4>
+                                <p class="mt-2 text-slate-600">An evolution of vulnerability management. CTEM is a continuous five-stage program to scope, discover, prioritize, validate, and mobilize responses to threats against the enterprise attack surface. It provides a proactive approach to reducing risk.</p>
+                                <div class="mt-4 p-3 bg-teal-50 rounded-lg">
+                                    <p><strong class="text-teal-800">Profitability Driver:</strong> Moves the service from reactive scanning to a proactive, high-value strategic program, justifying a recurring revenue retainer model.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="flex-shrink-0 w-12 h-12 rounded-full icon-bg flex items-center justify-center">
-                            <svg class="w-6 h-6 text-primary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                        </div>
-                        <div>
-                            <h5 class="font-bold">Regulatory Pressure</h5>
-                            <p class="text-text-light">Australia's SOCI Act and NZ's Privacy Act impose strict breach notification deadlines and compliance burdens.[10, 11]</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="compliance" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-slate-900">Mastering the ANZ Compliance Landscape</h3>
+                    <p class="mt-4 max-w-2xl mx-auto text-md text-slate-600">The complex and high-stakes regulatory environments in Australia and New Zealand are a primary business driver. Expertise in these frameworks is a key service differentiator and a significant revenue opportunity.</p>
+                </div>
+                <div class="section-card overflow-hidden mb-12">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead class="bg-slate-50">
+                                <tr>
+                                    <th class="p-4 font-semibold text-slate-600">Regulation</th>
+                                    <th class="p-4 font-semibold text-slate-600">Country</th>
+                                    <th class="p-4 font-semibold text-slate-600">Key Obligation</th>
+                                    <th class="p-4 font-semibold text-slate-600">MSSP Service Opportunity</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-4 font-medium">SOCI Act 2018</td>
+                                    <td class="p-4">Australia</td>
+                                    <td class="p-4">Report significant incidents within <strong>12 hours</strong>.</td>
+                                    <td class="p-4 text-teal-700 font-medium">SLA-backed rapid incident reporting service.</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-4 font-medium">Privacy Act (NDB)</td>
+                                    <td class="p-4">Australia</td>
+                                    <td class="p-4">Notify on breaches likely to cause "serious harm". Fines up to <strong>AUD 50M</strong>.</td>
+                                    <td class="p-4 text-teal-700 font-medium">Audit-ready logging and forensic readiness services.</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-4 font-medium">Privacy Act 2020</td>
+                                    <td class="p-4">New Zealand</td>
+                                    <td class="p-4">Notify on breaches likely to cause "serious harm".</td>
+                                    <td class="p-4 text-teal-700 font-medium">Compliance-as-a-Service for NZ data protection laws.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-slate-100 p-6 rounded-lg border-l-4 border-slate-400">
+                        <h4 class="text-lg font-bold">Australia: The Essential Eight</h4>
+                        <p class="mt-2 text-slate-600">The ACSC's Essential Eight is the de facto standard for cybersecurity maturity in Australia. MSSPs must provide services that directly map to implementing, managing, and attesting to these eight baseline controls, forming the core of a robust compliance offering.</p>
+                    </div>
+                    <div class="bg-slate-100 p-6 rounded-lg border-l-4 border-slate-400">
+                        <h4 class="text-lg font-bold">New Zealand: Critical Controls</h4>
+                        <p class="mt-2 text-slate-600">The NCSC's minimum standards and critical controls (based on frameworks like the CIS Top 18) serve as the benchmark for government and critical infrastructure. MSSP services should be aligned to help clients meet these public sector supply chain requirements.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="performance" class="py-16 sm:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-slate-900">Measuring Performance & Efficacy</h3>
+                    <p class="mt-4 max-w-2xl mx-auto text-md text-slate-600">SOC efficacy isn't abstract; it's a set of quantifiable metrics that demonstrate value. The most critical KPIs are centered on speed, as they directly impact an attacker's dwell time—the window they have to cause damage.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4">Core SOC KPIs & Benchmarks</h4>
+                        <div class="space-y-4">
+                            <div class="kpi-card bg-white p-4 rounded-r-lg">
+                                <h5 class="font-bold text-slate-800">Mean Time to Detect (MTTD)</h5>
+                                <p class="text-sm text-slate-500">Time from threat entry to SOC identification.</p>
+                                <p class="text-2xl font-bold text-teal-600 mt-2">30 mins - 4 hours</p>
+                                <p class="text-xs font-semibold text-slate-400">HIGH-PERFORMANCE TARGET</p>
+                            </div>
+                            <div class="kpi-card bg-white p-4 rounded-r-lg">
+                                <h5 class="font-bold text-slate-800">Mean Time to Respond (MTTR)</h5>
+                                <p class="text-sm text-slate-500">Time from detection to threat containment.</p>
+                                <p class="text-2xl font-bold text-teal-600 mt-2">&lt; 1 hour (Critical)</p>
+                                <p class="text-xs font-semibold text-slate-400">HIGH-PERFORMANCE TARGET</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="flex-shrink-0 w-12 h-12 rounded-full icon-bg flex items-center justify-center">
-                            <svg class="w-6 h-6 text-primary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9m-9 9a9 9 0 00-9-9"></path></svg>
+                    <div class="section-card p-6">
+                        <h4 class="text-xl font-semibold mb-2 text-center">The Value of Speed: Attacker Dwell Time</h4>
+                        <p class="text-sm text-slate-500 mb-4 text-center">Dwell Time = MTTD + MTTR. Use the sliders to see how improving your SOC's speed shrinks the attacker's window of opportunity.</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label for="mttd-slider" class="block text-sm font-medium text-slate-700">MTTD (in hours): <span id="mttd-value" class="font-bold">4</span></label>
+                                <input id="mttd-slider" type="range" min="0.5" max="24" value="4" step="0.5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+                            </div>
+                            <div>
+                                <label for="mttr-slider" class="block text-sm font-medium text-slate-700">MTTR (in hours): <span id="mttr-value" class="font-bold">2</span></label>
+                                <input id="mttr-slider" type="range" min="0.5" max="12" value="2" step="0.5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+                            </div>
                         </div>
-                        <div>
-                            <h5 class="font-bold">Expanding Attack Surface</h5>
-                            <p class="text-text-light">Rapid cloud adoption and remote work have created complex, hybrid environments that are difficult to secure internally.[6, 12]</p>
+
+                        <div class="mt-6 text-center bg-slate-100 p-4 rounded-lg">
+                            <p class="text-sm font-medium text-slate-500">Total Attacker Dwell Time</p>
+                            <p id="dwell-time-output" class="text-4xl font-extrabold text-red-600">6.0 Hours</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="mb-16 bg-gray-800 text-white rounded-xl p-8">
-            <h3 class="text-3xl font-bold text-center mb-8">The Modern SOC Blueprint</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-gray-700 p-6 rounded-lg text-center">
-                    <h4 class="text-xl font-bold mb-2">SIEM</h4>
-                    <p class="text-gray-300">The foundation for centralized log collection, threat detection, and compliance reporting.[13, 14]</p>
+        <section id="financials" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-slate-900">The Financial Case for a Modern SOC</h3>
+                    <p class="mt-4 max-w-2xl mx-auto text-md text-slate-600">Building an MSSP requires significant investment, primarily in talent. Profitability hinges on leveraging technology to create scalable service delivery and adopting value-based pricing.</p>
                 </div>
-                <div class="bg-gray-700 p-6 rounded-lg text-center">
-                    <h4 class="text-xl font-bold mb-2">XDR</h4>
-                    <p class="text-gray-300">Unifies data from endpoints, cloud, and networks for a holistic view of attacks.[5, 13]</p>
-                </div>
-                <div class="bg-purple-600 p-6 rounded-lg text-center ring-4 ring-purple-400">
-                    <h4 class="text-xl font-bold mb-2">SOAR</h4>
-                    <p class="text-gray-200">The efficiency engine. Automates response workflows to slash MTTR and analyst workload.[13, 15]</p>
-                </div>
-                <div class="bg-gray-700 p-6 rounded-lg text-center">
-                    <h4 class="text-xl font-bold mb-2">Threat Intel</h4>
-                    <p class="text-gray-300">Enriches alerts with context, enabling proactive threat hunting and faster triage.[13]</p>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="section-card p-6">
+                        <h4 class="text-xl font-semibold text-center mb-4">Estimated Annual Talent Costs (NZD)</h4>
+                        <div class="chart-container h-80 md:h-96">
+                            <canvas id="talentCostChart"></canvas>
+                        </div>
+                        <p class="text-xs text-center mt-2 text-slate-500">Source: Hays Salary Guide, via Moxie Insights. Reflects high-end salaries needed to attract top talent.</p>
+                    </div>
+                    <div class="section-card p-6">
+                        <h4 class="text-xl font-semibold mb-4">The Path to Profitability</h4>
+                        <p class="text-slate-600 mb-4">Best-in-class MSPs achieve EBITDA margins of <strong>15-17%+</strong>. The key is breaking the linear link between revenue and headcount.</p>
+                        <div class="bg-teal-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                            <h5 class="font-bold text-teal-800">The Automation Dividend</h5>
+                            <p class="text-teal-700 mt-1">SOAR and AI automate Tier 1/2 tasks, allowing a single analyst to manage more clients. This creates operational leverage, enabling revenue to scale faster than costs, which directly expands profit margins.</p>
+                        </div>
+                        <div class="mt-6">
+                            <h5 class="font-semibold text-slate-800 mb-2">Strategic Pricing Models</h5>
+                            <p class="text-sm text-slate-500">Move beyond cost-plus. Tiered and value-based models align your pricing with the risk reduction you provide, justifying premium rates.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="mb-16">
-            <h3 class="text-3xl font-bold text-center mb-8">The AI & Automation Revolution</h3>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div>
-                    <p class="text-lg text-text-light mb-6">AI and automation are the keys to unlocking both security efficacy and profitability. The goal is not to replace analysts, but to <span class="font-bold text-secondary-color">augment their intelligence</span>, eliminating repetitive tasks and allowing them to focus on high-value threat hunting and strategic response.[16] This is how you scale without linearly scaling headcount.</p>
-                    <div class="space-y-4">
-                        <p><span class="font-bold text-accent-color">✓ Hyperautomation:</span> Do more with fewer resources, directly boosting margins.[17]</p>
-                        <p><span class="font-bold text-accent-color">✓ Combat Alert Fatigue:</span> AI-powered triage reduces noise and prevents analyst burnout.[17]</p>
-                        <p><span class="font-bold text-accent-color">✓ Proactive Security:</span> Over 70% of businesses are increasing spending on proactive solutions.[17]</p>
-                    </div>
+        <section id="roadmap" class="py-16 sm:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-slate-900">Strategic Roadmap & Future Outlook</h3>
+                    <p class="mt-4 max-w-2xl mx-auto text-md text-slate-600">A blueprint for building a competitive, profitable MSSP in the ANZ region, and the key trends that will shape the market's future.</p>
                 </div>
-                <div class="material-card p-6">
-                    <h4 class="text-xl font-bold mb-4">AI's Impact on Incident Response Time</h4>
-                    <canvas id="aiImpactChart"></canvas>
-                    <p class="text-center text-sm text-text-light mt-2">Source: ReliaQuest 2024 Threat Research Report [16]</p>
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-white p-6 rounded-lg border-t-4 border-teal-500 shadow-md">
+                        <h4 class="text-xl font-bold mb-4">Blueprint for Success</h4>
+                        <ol class="list-decimal list-inside space-y-3 text-slate-700">
+                            <li><strong>Lead with Automation-First:</strong> Build your SOC on a converged platform with integrated SOAR and AI to maximize efficiency and scalability.</li>
+                            <li><strong>Monetize the Compliance Burden:</strong> Market premium "Compliance-as-a-Service" offerings for SOCI Act, NDB, and Essential Eight.</li>
+                            <li><strong>Adopt Value-Based Pricing:</strong> Structure tiers around outcomes like guaranteed MTTR to justify premium pricing.</li>
+                            <li><strong>Target High-Risk Verticals:</strong> Focus on critical infrastructure, healthcare, and financial services.</li>
+                            <li><strong>Champion the Co-Managed Model:</strong> Position as a strategic partner to the client's CISO, handling tactical operations while they retain strategic oversight.</li>
+                        </ol>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border-t-4 border-slate-500 shadow-md">
+                        <h4 class="text-xl font-bold mb-4">Evolving Opportunities</h4>
+                         <ul class="list-disc list-inside space-y-3 text-slate-700">
+                            <li><strong>Shift to Proactive Security:</strong> Growing demand for services like threat hunting and Continuous Threat Exposure Management (CTEM).</li>
+                            <li><strong>Convergence of IT & Security:</strong> SMEs seek a single partner for both IT management and security.</li>
+                            <li><strong>Sovereign Cloud & Data Residency:</strong> A key differentiator for government and critical infrastructure clients.</li>
+                            <li><strong>The Next Frontier: OT Security:</strong> Securing industrial control systems is a nascent, high-value market.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
+    </main>
 
-        <section class="mb-16">
-            <h3 class="text-3xl font-bold text-center mb-8">Your 4-Step Roadmap to a Profitable MSSP Practice</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="material-card p-6">
-                    <div class="text-4xl font-black text-primary-color opacity-25 mb-2">01</div>
-                    <h4 class="text-xl font-bold mb-2">Invest in a Converged Platform</h4>
-                    <p class="text-text-light">Unify SIEM, XDR, and SOAR to eliminate tool sprawl, reduce licensing costs, and maximize analyst efficiency.[18]</p>
-                </div>
-                <div class="material-card p-6">
-                    <div class="text-4xl font-black text-primary-color opacity-25 mb-2">02</div>
-                    <h4 class="text-xl font-bold mb-2">Monetize Compliance</h4>
-                    <p class="text-text-light">Develop premium "Compliance-as-a-Service" offerings for the SOCI Act and Essential Eight. Turn regulatory burden into a revenue stream.[19, 10]</p>
-                </div>
-                <div class="material-card p-6">
-                    <div class="text-4xl font-black text-primary-color opacity-25 mb-2">03</div>
-                    <h4 class="text-xl font-bold mb-2">Adopt Value-Based Pricing</h4>
-                    <p class="text-text-light">Move beyond per-device models. Price on outcomes like guaranteed MTTR, justifying premium rates and higher margins.[20, 21]</p>
-                </div>
-                <div class="material-card p-6">
-                    <div class="text-4xl font-black text-primary-color opacity-25 mb-2">04</div>
-                    <h4 class="text-xl font-bold mb-2">Champion the Co-Managed Model</h4>
-                    <p class="text-text-light">Partner with client CISOs. Handle the 24/7 tactical load, enabling them to focus on strategic risk management.[9, 14]</p>
-                </div>
-            </div>
-        </section>
+    <footer class="bg-slate-800 text-white mt-16">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <p>&copy; 2025 MSSP ANZ Strategic Insights. This infographic is based on the "Forging the Modern MSSP" research report.</p>
+        </div>
+    </footer>
 
-        <section>
-            <h3 class="text-3xl font-bold text-center mb-8">The Numbers Game: Costs vs. Opportunity</h3>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div class="space-y-6">
-                    <div class="material-card p-6 flex items-center space-x-4">
-                        <div class="text-4xl font-bold text-secondary-color">~$1.68M</div>
-                        <p class="text-text-light">Estimated annual talent cost (NZD) to build a foundational MSSP team, highlighting the need for efficiency.[7]</p>
-                    </div>
-                    <div class="material-card p-6 flex items-center space-x-4">
-                        <div class="text-4xl font-bold text-secondary-color">$200+</div>
-                        <p class="text-text-light">Per endpoint/month charged by top-earning MSSPs, far exceeding the ~$73 average for premium services.[20]</p>
-                    </div>
-                    <div class="material-card p-6 flex items-center space-x-4">
-                        <div class="text-4xl font-bold text-secondary-color">>15%</div>
-                        <p class="text-text-light">EBITDA achieved by best-in-class MSPs, compared to the 8-12% average. Profitability hinges on operational leverage.[22]</p>
-                    </div>
-                </div>
-                <div class="material-card p-6">
-                    <h4 class="text-xl font-bold mb-4">Common MSSP Pricing Models</h4>
-                    <canvas id="pricingModelsChart"></canvas>
-                </div>
-            </div>
-        </section>
-
-        <footer class="text-center mt-16 pt-8 border-t border-gray-300">
-            <p class="text-text-light">This infographic provides a strategic overview based on the "2025: The state of MSSP across Australia and New Zealand" report. Use these insights to build your modern security practice and capture the growing market opportunity.</p>
-        </footer>
-
-    </div>
-
-    <script>
-        // Chart 1: Market Growth
-        const marketGrowthCtx = document.getElementById('marketGrowthChart').getContext('2d');
-        new Chart(marketGrowthCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Australia', 'New Zealand'],
-                datasets:,
-                    backgroundColor: 'rgba(79, 70, 229, 0.6)',
-                    borderColor: 'rgba(79, 70, 229, 1)',
-                    borderWidth: 1
-                }, {
-                    label: '2030 Projected Market Size (USD)',
-                    data: [16.68, 0.825],
-                    backgroundColor: 'rgba(16, 185, 129, 0.6)',
-                    borderColor: 'rgba(16, 185, 129, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Market Size (Billions USD)'
-                        }
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const chartConfig = {
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        color: '#475569' // slate-600
                     }
                 },
-                plugins: {
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                let label = context.dataset.label |
-
-| '';
-                                if (label) {
-                                    label += ': ';
-                                }
-                                if (context.parsed.y!== null) {
-                                    label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact' }).format(context.parsed.y * 1000000000);
-                                }
-                                return label;
+                tooltip: {
+                    backgroundColor: '#1e293b', // slate-800
+                    titleColor: '#f1f5f9', // slate-100
+                    bodyColor: '#cbd5e1', // slate-300
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
                             }
+                            if (context.parsed.y !== null) {
+                                label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact' }).format(context.parsed.y);
+                            }
+                            return label;
                         }
                     }
                 }
-            }
-        });
-
-        // Chart 2: AI Impact on MTTR
-        const aiImpactCtx = document.getElementById('aiImpactChart').getContext('2d');
-        new Chart(aiImpactCtx, {
-            type: 'bar',
-            data: {
-                labels:,
-                datasets:, // 2.3 days vs ~7 minutes (0.0048 days)
-                    backgroundColor: [
-                        'rgba(239, 68, 68, 0.6)',
-                        'rgba(16, 185, 129, 0.6)'
-                    ],
-                    borderColor: [
-                        'rgba(239, 68, 68, 1)',
-                        'rgba(16, 185, 129, 1)'
-                    ],
-                    borderWidth: 1
-                }]
             },
-            options: {
-                indexAxis: 'y',
-                responsive: true,
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Days to Respond'
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#475569', // slate-600
+                        callback: function(value) {
+                             return new Intl.NumberFormat('en-US', { notation: 'compact', compactDisplay: 'short' }).format(value);
                         }
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: false
                     },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                let value = context.parsed.x;
-                                if (value < 1) {
-                                    return `~${Math.round(value * 24 * 60)} minutes`;
-                                }
-                                return `${value.toFixed(1)} days`;
-                            }
-                        }
+                    grid: {
+                        color: '#e2e8f0' // slate-200
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: '#475569' // slate-600
+                    },
+                    grid: {
+                        display: false
                     }
                 }
             }
-        });
+        }
+    };
 
-        // Chart 3: Pricing Models
-        const pricingModelsCtx = document.getElementById('pricingModelsChart').getContext('2d');
-        new Chart(pricingModelsCtx, {
-            type: 'pie',
-            data: {
-                labels:,
-                datasets:,
-                    backgroundColor: [
-                        'rgba(79, 70, 229, 0.7)',
-                        'rgba(124, 58, 237, 0.7)',
-                        'rgba(16, 185, 129, 0.7)',
-                        'rgba(107, 114, 128, 0.7)'
-                    ],
-                    borderColor: '#ffffff',
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    }
-                }
-            }
-        });
-    </script>
+    const talentCostData = {
+        labels: ['CISO', 'IDAM Architect', 'Sec Architect', 'GRC Consultant', 'SOC Manager', 'Pen Tester', 'Sec Analyst'],
+        datasets: [{
+            label: 'High-End Salary (NZD)',
+            data: [250000, 210000, 200000, 200000, 180000, 170000, 140000],
+            backgroundColor: 'rgba(20, 184, 166, 0.6)',
+            borderColor: 'rgba(13, 148, 136, 1)',
+            borderWidth: 1
+        }]
+    };
+    const talentCostOptions = JSON.parse(JSON.stringify(chartConfig.options));
+    talentCostOptions.plugins.tooltip.callbacks.label = (ctx) => `Salary: ${new Intl.NumberFormat('en-NZ', { style: 'currency', currency: 'NZD' }).format(ctx.parsed.y)}`;
+    new Chart(document.getElementById('talentCostChart'), { type: 'bar', data: talentCostData, options: talentCostOptions });
+
+    const mttdSlider = document.getElementById('mttd-slider');
+    const mttrSlider = document.getElementById('mttr-slider');
+    const mttdValue = document.getElementById('mttd-value');
+    const mttrValue = document.getElementById('mttr-value');
+    const dwellTimeOutput = document.getElementById('dwell-time-output');
+
+    function updateDwellTime() {
+        const mttd = parseFloat(mttdSlider.value);
+        const mttr = parseFloat(mttrSlider.value);
+        const dwellTime = mttd + mttr;
+        mttdValue.textContent = mttd.toFixed(1);
+        mttrValue.textContent = mttr.toFixed(1);
+        dwellTimeOutput.textContent = `${dwellTime.toFixed(1)} Hours`;
+    }
+
+    mttdSlider.addEventListener('input', updateDwellTime);
+    mttrSlider.addEventListener('input', updateDwellTime);
+    updateDwellTime();
+});
+
+function showThreats(country) {
+    const auContent = document.getElementById('au-threat-content');
+    const nzContent = document.getElementById('nz-threat-content');
+    const auBtn = document.getElementById('au-threat-btn');
+    const nzBtn = document.getElementById('nz-threat-btn');
+
+    if (country === 'au') {
+        auContent.classList.remove('hidden');
+        nzContent.classList.add('hidden');
+        auBtn.classList.add('active');
+        nzBtn.classList.remove('active');
+    } else {
+        auContent.classList.add('hidden');
+        nzContent.classList.remove('hidden');
+        auBtn.classList.remove('active');
+        nzBtn.classList.add('active');
+    }
+}
+
+function showTechInfo(tech) {
+    document.querySelectorAll('.tech-info-content').forEach(el => el.classList.add('hidden'));
+    document.getElementById(`tech-info-${tech}`).classList.remove('hidden');
+
+    document.querySelectorAll('.tech-stack-item').forEach(el => el.classList.remove('active'));
+    document.getElementById(`tech-${tech}`).classList.add('active');
+}
+</script>
 
 </body>
 </html>
