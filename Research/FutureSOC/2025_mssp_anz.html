@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025: The State of MSSP Across Australia and New Zealand</title>
+    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+    <script src="[https://cdn.jsdelivr.net/npm/chart.js](https://cdn.jsdelivr.net/npm/chart.js)"></script>
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap](https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap)" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+        }
+        :root {
+            --primary-color: #4f46e5;
+            --secondary-color: #7c3aed;
+            --accent-color: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #ffffff;
+            --bg-dark: #111827;
+        }
+       .gradient-text {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+       .material-card {
+            background-color: var(--bg-light);
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+       .material-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+       .icon-bg {
+            background-color: #e0e7ff;
+        }
+    </style>
+</head>
+<body class="text-text-dark">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-extrabold gradient-text mb-2">2025: The State of MSSP</h1>
+            <h2 class="text-2xl md:text-3xl font-bold text-text-dark">Across Australia & New Zealand</h2>
+            <p class="mt-4 text-lg text-text-light max-w-3xl mx-auto">A strategic guide for MSPs navigating the shift to security. The market is demanding more than just IT support—it's demanding resilience. This is your roadmap to building a modern, profitable security practice.</p>
+        </header>
+
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold text-center mb-8">The ANZ Market Opportunity is Accelerating</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="material-card p-6 text-center">
+                    <p class="text-4xl font-bold text-primary-color">13.5%</p>
+                    <p class="text-text-light mt-2">Australia's Cybersecurity Market CAGR (2025-2030) [5]</p>
+                </div>
+                <div class="material-card p-6 text-center">
+                    <p class="text-4xl font-bold text-primary-color">7.6%</p>
+                    <p class="text-text-light mt-2">New Zealand's Cybersecurity Market CAGR (2025-2030) [6]</p>
+                </div>
+                <div class="material-card p-6 text-center">
+                    <p class="text-4xl font-bold text-accent-color">>16%</p>
+                    <p class="text-text-light mt-2">Managed Services Growth Rate, outpacing the overall market [5]</p>
+                </div>
+                <div class="material-card p-6 text-center">
+                    <p class="text-4xl font-bold text-accent-color">92%</p>
+                    <p class="text-text-light mt-2">of NZ tech employers face a skills shortage—a key driver for outsourcing [7]</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="material-card p-6">
+                    <h4 class="text-xl font-bold mb-4">Cybersecurity Market Growth (USD Billions)</h4>
+                    <canvas id="marketGrowthChart"></canvas>
+                </div>
+                <div class="space-y-6">
+                    <h4 class="text-2xl font-bold text-center">Key Forces Driving MSSP Demand</h4>
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full icon-bg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-primary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-5.197-5.803"></path></svg>
+                        </div>
+                        <div>
+                            <h5 class="font-bold">The Skills Chasm</h5>
+                            <p class="text-text-light">A severe, persistent talent shortage makes building in-house 24/7 SOCs impossible for most businesses.[8, 9]</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full icon-bg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-primary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        </div>
+                        <div>
+                            <h5 class="font-bold">Regulatory Pressure</h5>
+                            <p class="text-text-light">Australia's SOCI Act and NZ's Privacy Act impose strict breach notification deadlines and compliance burdens.[10, 11]</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full icon-bg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-primary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9m-9 9a9 9 0 00-9-9"></path></svg>
+                        </div>
+                        <div>
+                            <h5 class="font-bold">Expanding Attack Surface</h5>
+                            <p class="text-text-light">Rapid cloud adoption and remote work have created complex, hybrid environments that are difficult to secure internally.[6, 12]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16 bg-gray-800 text-white rounded-xl p-8">
+            <h3 class="text-3xl font-bold text-center mb-8">The Modern SOC Blueprint</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-700 p-6 rounded-lg text-center">
+                    <h4 class="text-xl font-bold mb-2">SIEM</h4>
+                    <p class="text-gray-300">The foundation for centralized log collection, threat detection, and compliance reporting.[13, 14]</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg text-center">
+                    <h4 class="text-xl font-bold mb-2">XDR</h4>
+                    <p class="text-gray-300">Unifies data from endpoints, cloud, and networks for a holistic view of attacks.[5, 13]</p>
+                </div>
+                <div class="bg-purple-600 p-6 rounded-lg text-center ring-4 ring-purple-400">
+                    <h4 class="text-xl font-bold mb-2">SOAR</h4>
+                    <p class="text-gray-200">The efficiency engine. Automates response workflows to slash MTTR and analyst workload.[13, 15]</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg text-center">
+                    <h4 class="text-xl font-bold mb-2">Threat Intel</h4>
+                    <p class="text-gray-300">Enriches alerts with context, enabling proactive threat hunting and faster triage.[13]</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold text-center mb-8">The AI & Automation Revolution</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="text-lg text-text-light mb-6">AI and automation are the keys to unlocking both security efficacy and profitability. The goal is not to replace analysts, but to <span class="font-bold text-secondary-color">augment their intelligence</span>, eliminating repetitive tasks and allowing them to focus on high-value threat hunting and strategic response.[16] This is how you scale without linearly scaling headcount.</p>
+                    <div class="space-y-4">
+                        <p><span class="font-bold text-accent-color">✓ Hyperautomation:</span> Do more with fewer resources, directly boosting margins.[17]</p>
+                        <p><span class="font-bold text-accent-color">✓ Combat Alert Fatigue:</span> AI-powered triage reduces noise and prevents analyst burnout.[17]</p>
+                        <p><span class="font-bold text-accent-color">✓ Proactive Security:</span> Over 70% of businesses are increasing spending on proactive solutions.[17]</p>
+                    </div>
+                </div>
+                <div class="material-card p-6">
+                    <h4 class="text-xl font-bold mb-4">AI's Impact on Incident Response Time</h4>
+                    <canvas id="aiImpactChart"></canvas>
+                    <p class="text-center text-sm text-text-light mt-2">Source: ReliaQuest 2024 Threat Research Report [16]</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold text-center mb-8">Your 4-Step Roadmap to a Profitable MSSP Practice</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="material-card p-6">
+                    <div class="text-4xl font-black text-primary-color opacity-25 mb-2">01</div>
+                    <h4 class="text-xl font-bold mb-2">Invest in a Converged Platform</h4>
+                    <p class="text-text-light">Unify SIEM, XDR, and SOAR to eliminate tool sprawl, reduce licensing costs, and maximize analyst efficiency.[18]</p>
+                </div>
+                <div class="material-card p-6">
+                    <div class="text-4xl font-black text-primary-color opacity-25 mb-2">02</div>
+                    <h4 class="text-xl font-bold mb-2">Monetize Compliance</h4>
+                    <p class="text-text-light">Develop premium "Compliance-as-a-Service" offerings for the SOCI Act and Essential Eight. Turn regulatory burden into a revenue stream.[19, 10]</p>
+                </div>
+                <div class="material-card p-6">
+                    <div class="text-4xl font-black text-primary-color opacity-25 mb-2">03</div>
+                    <h4 class="text-xl font-bold mb-2">Adopt Value-Based Pricing</h4>
+                    <p class="text-text-light">Move beyond per-device models. Price on outcomes like guaranteed MTTR, justifying premium rates and higher margins.[20, 21]</p>
+                </div>
+                <div class="material-card p-6">
+                    <div class="text-4xl font-black text-primary-color opacity-25 mb-2">04</div>
+                    <h4 class="text-xl font-bold mb-2">Champion the Co-Managed Model</h4>
+                    <p class="text-text-light">Partner with client CISOs. Handle the 24/7 tactical load, enabling them to focus on strategic risk management.[9, 14]</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="text-3xl font-bold text-center mb-8">The Numbers Game: Costs vs. Opportunity</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6">
+                    <div class="material-card p-6 flex items-center space-x-4">
+                        <div class="text-4xl font-bold text-secondary-color">~$1.68M</div>
+                        <p class="text-text-light">Estimated annual talent cost (NZD) to build a foundational MSSP team, highlighting the need for efficiency.[7]</p>
+                    </div>
+                    <div class="material-card p-6 flex items-center space-x-4">
+                        <div class="text-4xl font-bold text-secondary-color">$200+</div>
+                        <p class="text-text-light">Per endpoint/month charged by top-earning MSSPs, far exceeding the ~$73 average for premium services.[20]</p>
+                    </div>
+                    <div class="material-card p-6 flex items-center space-x-4">
+                        <div class="text-4xl font-bold text-secondary-color">>15%</div>
+                        <p class="text-text-light">EBITDA achieved by best-in-class MSPs, compared to the 8-12% average. Profitability hinges on operational leverage.[22]</p>
+                    </div>
+                </div>
+                <div class="material-card p-6">
+                    <h4 class="text-xl font-bold mb-4">Common MSSP Pricing Models</h4>
+                    <canvas id="pricingModelsChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-16 pt-8 border-t border-gray-300">
+            <p class="text-text-light">This infographic provides a strategic overview based on the "2025: The state of MSSP across Australia and New Zealand" report. Use these insights to build your modern security practice and capture the growing market opportunity.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Chart 1: Market Growth
+        const marketGrowthCtx = document.getElementById('marketGrowthChart').getContext('2d');
+        new Chart(marketGrowthCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Australia', 'New Zealand'],
+                datasets:,
+                    backgroundColor: 'rgba(79, 70, 229, 0.6)',
+                    borderColor: 'rgba(79, 70, 229, 1)',
+                    borderWidth: 1
+                }, {
+                    label: '2030 Projected Market Size (USD)',
+                    data: [16.68, 0.825],
+                    backgroundColor: 'rgba(16, 185, 129, 0.6)',
+                    borderColor: 'rgba(16, 185, 129, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Market Size (Billions USD)'
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label |
+
+| '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y!== null) {
+                                    label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact' }).format(context.parsed.y * 1000000000);
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart 2: AI Impact on MTTR
+        const aiImpactCtx = document.getElementById('aiImpactChart').getContext('2d');
+        new Chart(aiImpactCtx, {
+            type: 'bar',
+            data: {
+                labels:,
+                datasets:, // 2.3 days vs ~7 minutes (0.0048 days)
+                    backgroundColor: [
+                        'rgba(239, 68, 68, 0.6)',
+                        'rgba(16, 185, 129, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(239, 68, 68, 1)',
+                        'rgba(16, 185, 129, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Days to Respond'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let value = context.parsed.x;
+                                if (value < 1) {
+                                    return `~${Math.round(value * 24 * 60)} minutes`;
+                                }
+                                return `${value.toFixed(1)} days`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart 3: Pricing Models
+        const pricingModelsCtx = document.getElementById('pricingModelsChart').getContext('2d');
+        new Chart(pricingModelsCtx, {
+            type: 'pie',
+            data: {
+                labels:,
+                datasets:,
+                    backgroundColor: [
+                        'rgba(79, 70, 229, 0.7)',
+                        'rgba(124, 58, 237, 0.7)',
+                        'rgba(16, 185, 129, 0.7)',
+                        'rgba(107, 114, 128, 0.7)'
+                    ],
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
