@@ -122,5 +122,11 @@ permalink: /catalog/blue/
     <p>Sigma-based threat hunting and fast forensics timeline generator for Windows event logs (v4.2.0, Oct 2026).</p>
     <a class="button" href="https://github.com/Yamato-Security/hayabusa">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Blue,Password">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">Password</span></div>
+    <h3>Bitwarden</h3>
+    <p>Open-source, end-to-end encrypted password manager (cloud US/EU or self-hosted) with CLI and Secrets Manager. Prefer signed native CLI binaries over npm and pin versions: @bitwarden/cli 2026.4.0 on npm was malicious (CVE-2026-42994, fixed in 2026.4.1).</p>
+    <a class="button" href="https://bitwarden.com">Visit source</a>
+  </article>
 </div>
 </section>

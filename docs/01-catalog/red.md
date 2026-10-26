@@ -97,5 +97,11 @@ permalink: /catalog/red/
     <p>A fictional game reference; do not treat gameplay as security guidance or authorization.</p>
     <a class="button" href="https://www.ubisoft.com/en-us/game/watch-dogs/watch-dogs">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Red,Web">
+    <div class="card__meta"><span class="team-chip team-chip--red">Red</span><span class="category-chip">Web</span></div>
+    <h3>Strix</h3>
+    <p>Open-source autonomous AI pentesting agents (Apache-2.0). Authorized targets only, in an isolated VM; review the unpinned install script, disable telemetry, and avoid versions 1.0.0–1.0.2 (CVE-2026-15519). PoC and auto-patch claims are vendor claims.</p>
+    <a class="button" href="https://github.com/usestrix/strix">Visit source</a>
+  </article>
 </div>
 </section>
