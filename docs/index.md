@@ -98,7 +98,7 @@ permalink: /
   <article class="card" data-filter-item data-tags="Rare events,Advisories">
     <div class="card__meta"><span class="category-chip">Rare events</span></div>
     <h3>Advisories</h3>
-    <p>Find the policy for exceptional, worldwide-impact security events.</p>
+    <p>Find source-backed guidance for exceptional, worldwide-impact security events.</p>
     <a class="button" href="{{ '/advisories/' | relative_url }}">Read advisories</a>
   </article>
 </div>

@@ -10,10 +10,16 @@ permalink: /advisories/
   <p class="lead">Reserved for exceptional, worldwide-impact security events that require coordinated action across many organizations.</p>
 </header>
 
-<div class="empty-state">
-  <h2>No active repository advisories</h2>
-  <p>This is intentionally not a CVE feed or vulnerability dump. The repository does not currently contain a source-backed advisory entry to publish here.</p>
-  <a class="button" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">View CISA KEV catalog</a>
+<div class="card-grid">
+  <article class="card card--featured">
+    <div class="card__meta"><span class="category-chip">Active</span><span class="category-chip">Oct 2026</span><span class="category-chip">Runtime patch required</span></div>
+    <h2>PHP2Shell — the runtime</h2>
+    <p>Engine RCE pair (CVE-2026-109618 / CVE-2026-109619): patch PHP, not only the CMS.</p>
+    <div class="hero__actions">
+      <a class="button" href="{{ '/advisories/php2shell/' | relative_url }}">Read advisory</a>
+      <a class="button button--secondary" href="https://amcamillo.github.io/thinkinfosec-hub/Research/php2shell/">Hub briefing</a>
+    </div>
+  </article>
 </div>
 
 <div class="section-heading">
