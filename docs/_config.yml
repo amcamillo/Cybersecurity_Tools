@@ -1,0 +1,19 @@
+title: Cybersecurity Tools
+description: A work-in-progress catalog of cybersecurity tools, research, detection engineering resources, and demos.
+url: "https://amcamillo.github.io"
+baseurl: "/Cybersecurity_Tools"
+
+remote_theme: just-the-docs/just-the-docs
+
+search_enabled: true
+color_scheme: light
+heading_anchors: true
+
+aux_links:
+  "Cybersecurity_Tools on GitHub":
+    - "https://github.com/amcamillo/Cybersecurity_Tools"
+
+aux_links_new_tab: true
+
+plugins:
+  - jekyll-remote-theme
