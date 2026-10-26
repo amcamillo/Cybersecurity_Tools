@@ -1,35 +1,43 @@
 ---
 title: Purple
-parent: Catalog
-nav_order: 4
+description: "Controlled adversary emulation connected to defensive validation."
 permalink: /catalog/purple/
 ---
 
-# Purple
+<header class="page-header">
+  <span class="eyebrow">Catalog · Purple</span>
+  <h1>Validation and collaboration</h1>
+  <p class="lead">Connect controlled adversary emulation to observable defensive outcomes and testable detections.</p>
+</header>
 
-<span class="legend-chip legend-chip--purple">Validation and collaboration</span>
+<div class="card-grid card-grid--two">
+  <article class="card">
+    <div class="card__meta"><span class="team-chip team-chip--purple">Purple</span><span class="category-chip">Knowledge base</span></div>
+    <h3>MITRE ATT&amp;CK</h3>
+    <p>Map hypotheses, behaviors, and coverage using a shared vocabulary.</p>
+    <a class="button" href="https://attack.mitre.org/">Visit source</a>
+  </article>
+  <article class="card">
+    <div class="card__meta"><span class="team-chip team-chip--purple">Purple</span><span class="category-chip">Validation</span></div>
+    <h3>Atomic Red Team</h3>
+    <p>Compare expected telemetry with collected evidence using reviewed, authorized tests.</p>
+    <a class="button" href="https://github.com/redcanaryco/atomic-red-team">Visit source</a>
+  </article>
+  <article class="card">
+    <div class="card__meta"><span class="team-chip team-chip--purple">Purple</span><span class="category-chip">Emulation</span></div>
+    <h3>MITRE Caldera</h3>
+    <p>Controlled emulation for a lab or explicitly approved environment.</p>
+    <a class="button" href="https://caldera.mitre.org/">Visit source</a>
+  </article>
+  <article class="card">
+    <div class="card__meta"><span class="team-chip team-chip--purple">Purple</span><span class="category-chip">Detections</span></div>
+    <h3>Detection engineering</h3>
+    <p>Turn observed behavior into testable queries and detections.</p>
+    <a class="button" href="{{ '/detection-engineering/' | relative_url }}">Explore detections</a>
+  </article>
+</div>
 
-Purple teaming connects controlled adversary emulation to observable defensive outcomes.
-
-<div class="tis-tool-row">
-  <h3>MITRE ATT&amp;CK</h3>
-  <p>Map hypotheses, behaviors, and coverage using a shared vocabulary.</p>
-  <a class="tis-cta" href="https://attack.mitre.org/">Source</a>
+<div class="callout callout--warning">
+  <span class="callout__mark" aria-hidden="true">!</span>
+  <p><strong>Plan before testing.</strong> Define authorization, scope, safety controls, expected telemetry, rollback, and success criteria.</p>
 </div>
-<div class="tis-tool-row">
-  <h3>Atomic Red Team</h3>
-  <p>Run reviewed, authorized tests and compare expected telemetry with collected evidence.</p>
-  <a class="tis-cta" href="https://github.com/redcanaryco/atomic-red-team">Source</a>
-</div>
-<div class="tis-tool-row">
-  <h3>MITRE Caldera</h3>
-  <p>Orchestrate controlled emulation in a lab or explicitly approved environment.</p>
-  <a class="tis-cta" href="https://caldera.mitre.org/">Source</a>
-</div>
-<div class="tis-tool-row">
-  <h3>Detection engineering</h3>
-  <p>Turn observed behavior into testable queries and detections.</p>
-  <a class="tis-cta" href="{{ '/detection-engineering/' | relative_url }}">Source</a>
-</div>
-
-Define scope, safety controls, expected telemetry, rollback, and success criteria before testing.
