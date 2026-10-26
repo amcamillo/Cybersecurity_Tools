@@ -1,0 +1,179 @@
+// ThinkInfoSec Hub visual stables for the light Just the Docs theme.
+
+body,
+.main {
+  background-color: #f4f7f6;
+  color: #333333;
+}
+
+.side-bar {
+  background-color: #f4f7f6;
+}
+
+.site-title,
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+  color: #0d1f3c;
+}
+
+a,
+.nav-list .nav-list-item .nav-list-link.active {
+  color: #0077b5;
+}
+
+a:hover,
+a:focus,
+.nav-list .nav-list-item .nav-list-link:hover {
+  color: #005a8c;
+}
+
+.site-logo {
+  background-position: left center;
+  background-size: contain;
+}
+
+.tis-eyebrow,
+.tis-badge,
+.legend-chip {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.tis-eyebrow,
+.tis-badge {
+  padding: 0.4rem 0.65rem;
+  background-color: #00bfcf;
+  color: #0d1f3c;
+  text-transform: uppercase;
+}
+
+.tis-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.tis-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  min-height: 8rem;
+  padding: 1rem;
+  border: 1px solid $border-color;
+  border-radius: 0.5rem;
+  background-color: $body-background-color;
+}
+
+.tis-card > :first-child,
+.tis-card > :last-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.tis-card h2,
+.tis-card h3 {
+  margin: 0;
+}
+
+.tis-card p {
+  margin: 0;
+}
+
+.tis-card .tis-cta {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.tis-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.8rem;
+  border-radius: 0.35rem;
+  background-color: #00bfcf;
+  color: #0d1f3c;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tis-cta:hover,
+.tis-cta:focus {
+  background-color: #005a8c;
+  color: $white;
+}
+
+.legend-chip {
+  padding: 0.35rem 0.6rem;
+  color: $white;
+}
+
+.legend-chip--blue {
+  background-color: #2869e6;
+}
+
+.legend-chip--red {
+  background-color: #dd2e2e;
+}
+
+.legend-chip--green {
+  background-color: #026e57;
+}
+
+.legend-chip--purple {
+  background-color: #5e41d0;
+}
+
+.tis-tool-row {
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.8fr) minmax(14rem, 2fr) auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid $border-color;
+}
+
+.tis-tool-row h2,
+.tis-tool-row h3,
+.tis-tool-row p {
+  margin: 0;
+}
+
+.tis-callout {
+  padding: 1rem;
+  border-left: 0.3rem solid #dd2e2e;
+  background-color: $body-background-color;
+}
+
+.tis-connect {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border: 1px solid $border-color;
+  border-radius: 0.5rem;
+  background-color: $body-background-color;
+}
+
+.tis-connect__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+}
+
+@media (max-width: 42rem) {
+  .tis-tool-row {
+    grid-template-columns: 1fr;
+  }
+
+  .tis-tool-row .tis-cta {
+    justify-self: start;
+  }
+}

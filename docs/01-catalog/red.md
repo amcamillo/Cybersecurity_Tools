@@ -7,7 +7,12 @@ permalink: /catalog/red/
 
 # Red
 
-Use these references only with explicit authorization, a defined scope, and appropriate data-handling controls. This page provides links and caveats, not offensive procedures or code.
+<span class="legend-chip legend-chip--red">Authorized testing</span>
+
+<div class="tis-callout">
+  <strong>Authorization required.</strong>
+  Use these references only with explicit authorization, a defined scope, and appropriate data-handling controls. This page contains links and safety caveats only—no offensive procedures or code.
+</div>
 
 - [Sherlock](https://github.com/sherlock-project/sherlock) — public username discovery; respect privacy, platform terms, and applicable law.
 - [Nmap](https://nmap.org/) — network discovery and auditing; scan only systems you are authorized to assess.
