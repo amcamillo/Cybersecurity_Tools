@@ -10,8 +10,11 @@ permalink: /detection-engineering/cql/
   <p class="lead">Start with the linked LogScale syntax reference, then validate every query against the destination data model.</p>
 </header>
 
+<section class="filter-region" data-filter-region data-filter-label="Filter CQL resources">
+<div class="tag-filter" data-filter-controls></div>
+<p class="filter-status" data-filter-status aria-live="polite"></p>
 <div class="card-grid card-grid--two">
-  <article class="card">
+  <article class="card card--featured" data-filter-item data-tags="CQL,Reference,CrowdStrike">
     <div class="card__meta"><span class="category-chip">Reference</span><span class="category-chip">CrowdStrike</span></div>
     <h3>LogScale query-language syntax</h3>
     <p>CrowdStrike LogScale syntax documentation linked by this repository.</p>
@@ -23,6 +26,7 @@ permalink: /detection-engineering/cql/
     <a class="text-link" href="https://github.com/amcamillo/Cybersecurity_Tools">View repository</a>
   </div>
 </div>
+</section>
 
 <div class="callout">
   <span class="callout__mark" aria-hidden="true">i</span>
