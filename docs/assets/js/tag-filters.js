@@ -91,6 +91,7 @@
             .indexOf(key) !== -1;
 
         item.hidden = !matches;
+        item.style.display = matches ? "" : "none";
         if (matches) {
           visibleCount += 1;
         }
@@ -104,6 +105,7 @@
           }
         );
         group.hidden = !hasVisibleItem;
+        group.style.display = hasVisibleItem ? "" : "none";
       });
 
       controls.querySelectorAll("button").forEach(function (button) {

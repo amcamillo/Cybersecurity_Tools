@@ -620,15 +620,22 @@ h3 {
   cursor: pointer;
 }
 
-.tag-filter button:hover,
-.tag-filter button[aria-pressed="true"] {
+.tag-filter button:hover {
   border-color: var(--accent);
   background: var(--accent-weak);
   color: var(--accent-strong);
 }
 
 .tag-filter button[aria-pressed="true"] {
-  box-shadow: inset 0 0 0 1px var(--accent);
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: none;
+  color: #fff;
+}
+
+.tag-filter button:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 3px;
 }
 
 .tag-filter__count {
