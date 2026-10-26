@@ -30,15 +30,20 @@ permalink: /advisories/php2shell/
     <div class="card__meta"><span class="category-chip">CVE-2026-109618</span><span class="category-chip">CVE-2026-109619</span></div>
     <h3>Two critical engine vulnerabilities</h3>
     <p>Both issues can allow unauthenticated remote code execution in PHP installations serving web requests. The PHP project scores each advisory CVSS v4.0 9.2; the leaked 10.0 figure was not the published score.</p>
-    <a class="text-link" href="https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w">GHSA-w8hw-w9fx-j79w</a>
-    <a class="text-link" href="https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp">GHSA-6wmf-4rv5-p3rp</a>
+    <div>
+      <a class="text-link" href="https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w">GHSA-w8hw-w9fx-j79w</a><br>
+      <a class="text-link" href="https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp">GHSA-6wmf-4rv5-p3rp</a><br>
+      <a class="text-link" href="https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/">PHP Foundation disclosure account</a>
+    </div>
   </article>
   <article class="card">
     <div class="card__meta"><span class="category-chip">Server APIs</span></div>
     <h3>mod_php is the highest demonstrated risk</h3>
     <p>PHP-FPM, Apache with mod_php, php-cgi, FrankenPHP, and LiteSpeed are in patch scope. The PHP project identifies mod_php as highest risk; PHP-FPM remains in scope and must be patched.</p>
-    <a class="text-link" href="https://www.php.net/archive/2026.php#2026-10-21-5">PHP project scope</a>
-    <a class="text-link" href="https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching">CISA alert</a>
+    <div>
+      <a class="text-link" href="https://www.php.net/archive/2026.php#2026-10-21-5">PHP project scope</a><br>
+      <a class="text-link" href="https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching">CISA alert</a>
+    </div>
   </article>
 </div>
 
@@ -51,26 +56,34 @@ permalink: /advisories/php2shell/
   <article class="resource-row">
     <h3>1. Inventory every web-serving PHP runtime</h3>
     <p>Include third-party products, appliances, containers, and software that embeds PHP; its presence may not be obvious from the application inventory.</p>
-    <a class="text-link" href="https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching">CISA inventory guidance</a>
-    <a class="text-link" href="https://www.cyber.gc.ca/en/alerts-advisories/al26-026-critical-vulnerabilities-impacting-php-cve-2026-109618-cve-2026-109619">Cyber Centre AL26-026</a>
+    <div>
+      <a class="text-link" href="https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching">CISA inventory guidance</a><br>
+      <a class="text-link" href="https://www.cyber.gc.ca/en/alerts-advisories/al26-026-critical-vulnerabilities-impacting-php-cve-2026-109618-cve-2026-109619">Cyber Centre AL26-026</a>
+    </div>
   </article>
   <article class="resource-row">
     <h3>2. Move supported branches to fixed releases</h3>
     <p>Update to PHP 8.5.12, 8.4.27, 8.3.36, or 8.2.35, or use a vendor package containing the fixes. Restart every PHP worker, then verify the runtime build serving production traffic.</p>
-    <a class="text-link" href="https://www.php.net/archive/2026.php#2026-10-21-5">PHP releases and remediation</a>
-    <a class="text-link" href="https://amcamillo.github.io/thinkinfosec-hub/Research/php2shell/">ThinkInfoSec operational briefing</a>
+    <div>
+      <a class="text-link" href="https://www.php.net/archive/2026.php#2026-10-21-5">PHP releases and remediation</a><br>
+      <a class="text-link" href="https://amcamillo.github.io/thinkinfosec-hub/Research/php2shell/">ThinkInfoSec operational briefing</a>
+    </div>
   </article>
   <article class="resource-row">
     <h3>3. Take unpatchable internet-facing systems offline</h3>
     <p>If an update cannot be applied immediately—especially for PHP 8.1 and earlier—CISA advises taking PHP-based systems offline until they can be patched or updated. The Cyber Centre recommends isolation from public networks where immediate remediation is not feasible.</p>
-    <a class="text-link" href="https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching">CISA actions</a>
-    <a class="text-link" href="https://www.cyber.gc.ca/en/alerts-advisories/al26-026-critical-vulnerabilities-impacting-php-cve-2026-109618-cve-2026-109619">Cyber Centre actions</a>
+    <div>
+      <a class="text-link" href="https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching">CISA actions</a><br>
+      <a class="text-link" href="https://www.cyber.gc.ca/en/alerts-advisories/al26-026-critical-vulnerabilities-impacting-php-cve-2026-109618-cve-2026-109619">Cyber Centre actions</a>
+    </div>
   </article>
   <article class="resource-row">
     <h3>4. Do not close on an application update</h3>
     <p>Updating a CMS, application, or plugin alone does not fix these engine vulnerabilities. A WAF or configuration change can reduce exposure to some paths, but only the runtime update is a complete fix.</p>
-    <a class="text-link" href="https://blog.cloudflare.com/php-vulnerabilities-waf-protection/">Cloudflare vendor bulletin</a>
-    <a class="text-link" href="https://vercel.com/kb/bulletin/php2shell-security-bulletin">Vercel vendor bulletin</a>
+    <div>
+      <a class="text-link" href="https://blog.cloudflare.com/php-vulnerabilities-waf-protection/">Cloudflare vendor bulletin</a><br>
+      <a class="text-link" href="https://vercel.com/kb/bulletin/php2shell-security-bulletin">Vercel vendor bulletin</a>
+    </div>
   </article>
 </div>
 
@@ -84,8 +97,10 @@ permalink: /advisories/php2shell/
     <div class="card__meta"><span class="category-chip">Process and network</span></div>
     <h3>Unexpected PHP or web-server behavior</h3>
     <p>Investigate PHP workers launching shells or downloading tools, and unexpected processes, commands, files, accounts, or outbound connections associated with PHP or web-server services.</p>
-    <a class="text-link" href="https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching">CISA detection guidance</a>
-    <a class="text-link" href="https://www.cyber.gc.ca/en/alerts-advisories/al26-026-critical-vulnerabilities-impacting-php-cve-2026-109618-cve-2026-109619">Cyber Centre detection guidance</a>
+    <div>
+      <a class="text-link" href="https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching">CISA detection guidance</a><br>
+      <a class="text-link" href="https://www.cyber.gc.ca/en/alerts-advisories/al26-026-critical-vulnerabilities-impacting-php-cve-2026-109618-cve-2026-109619">Cyber Centre detection guidance</a>
+    </div>
   </article>
   <article class="card">
     <div class="card__meta"><span class="category-chip">Application and worker</span></div>
@@ -97,7 +112,7 @@ permalink: /advisories/php2shell/
 
 <div class="callout">
   <span class="callout__mark" aria-hidden="true">i</span>
-  <p><strong>Adjacent follow-on:</strong> CVE-2026-115560 concerns session upload progress and is not branded PHP2Shell. The 21 October releases do not close it; review the PHP project’s 23 October informational note and the Cyber Centre update separately. <a href="https://www.php.net/archive/2026.php">PHP News Archive — 2026</a></p>
+  <p><strong>Keep the identifiers separate:</strong> PHP2Shell here means CVE-2026-109618 and CVE-2026-109619, not the 2012 PHP-CGI query-string issue CVE-2012-1823. CVE-2026-115560 concerns session upload progress and is an adjacent follow-on, not PHP2Shell; the 21 October releases do not close it. <a href="https://amcamillo.github.io/thinkinfosec-hub/Research/php2shell/">ThinkInfoSec briefing</a> · <a href="https://www.php.net/archive/2026.php">PHP News Archive — 2026</a></p>
 </div>
 
 <div class="section-heading">
@@ -114,23 +129,29 @@ permalink: /advisories/php2shell/
   <article class="resource-row">
     <h3>PHP project</h3>
     <p>Official release advisory, two GitHub security advisories, and the PHP Foundation disclosure account.</p>
-    <a class="text-link" href="https://www.php.net/archive/2026.php#2026-10-21-5">PHP security advisory and releases</a>
-    <a class="text-link" href="https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w">GHSA-w8hw-w9fx-j79w</a>
-    <a class="text-link" href="https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp">GHSA-6wmf-4rv5-p3rp</a>
-    <a class="text-link" href="https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/">PHP Foundation post</a>
+    <div>
+      <a class="text-link" href="https://www.php.net/archive/2026.php#2026-10-21-5">PHP security advisory and releases</a><br>
+      <a class="text-link" href="https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w">GHSA-w8hw-w9fx-j79w</a><br>
+      <a class="text-link" href="https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp">GHSA-6wmf-4rv5-p3rp</a><br>
+      <a class="text-link" href="https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/">PHP Foundation post</a>
+    </div>
   </article>
   <article class="resource-row">
     <h3>National and coordination advisories</h3>
     <p>Operational guidance from CISA, the Canadian Centre for Cyber Security, and CERT/CC.</p>
-    <a class="text-link" href="https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching">CISA alert</a>
-    <a class="text-link" href="https://www.cyber.gc.ca/en/alerts-advisories/al26-026-critical-vulnerabilities-impacting-php-cve-2026-109618-cve-2026-109619">Cyber Centre AL26-026</a>
-    <a class="text-link" href="https://www.kb.cert.org/vuls/id/763488">CERT/CC VU#763488</a>
+    <div>
+      <a class="text-link" href="https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching">CISA alert</a><br>
+      <a class="text-link" href="https://www.cyber.gc.ca/en/alerts-advisories/al26-026-critical-vulnerabilities-impacting-php-cve-2026-109618-cve-2026-109619">Cyber Centre AL26-026</a><br>
+      <a class="text-link" href="https://www.kb.cert.org/vuls/id/763488">CERT/CC VU#763488</a>
+    </div>
   </article>
   <article class="resource-row">
     <h3>Researcher and vendor bulletins</h3>
     <p>Labelled secondary material on demonstrated impact, investigation signals, and edge controls.</p>
-    <a class="text-link" href="https://www.wiz.io/blog/php2shell-php-rce">Wiz Research</a>
-    <a class="text-link" href="https://blog.cloudflare.com/php-vulnerabilities-waf-protection/">Cloudflare</a>
-    <a class="text-link" href="https://vercel.com/kb/bulletin/php2shell-security-bulletin">Vercel</a>
+    <div>
+      <a class="text-link" href="https://www.wiz.io/blog/php2shell-php-rce">Wiz Research</a><br>
+      <a class="text-link" href="https://blog.cloudflare.com/php-vulnerabilities-waf-protection/">Cloudflare</a><br>
+      <a class="text-link" href="https://vercel.com/kb/bulletin/php2shell-security-bulletin">Vercel</a>
+    </div>
   </article>
 </div>
