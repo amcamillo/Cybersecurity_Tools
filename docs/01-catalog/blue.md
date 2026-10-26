@@ -116,5 +116,11 @@ permalink: /catalog/blue/
     <p>Free-tools collection linked from the repository catalog.</p>
     <a class="button" href="https://assets.contentstack.io/v3/assets/blt36c2e63521272fdc/bltd8ba96a0fce78883/Free_Faculty_Tools.pdf">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Blue,DFIR">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">DFIR</span></div>
+    <h3>Hayabusa</h3>
+    <p>Sigma-based threat hunting and fast forensics timeline generator for Windows event logs (v4.2.0, Oct 2026).</p>
+    <a class="button" href="https://github.com/Yamato-Security/hayabusa">Visit source</a>
+  </article>
 </div>
 </section>

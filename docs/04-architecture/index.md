@@ -26,6 +26,12 @@ permalink: /architecture/
     <p>Repository research focused on future security-operations models.</p>
     <a class="button" href="https://github.com/amcamillo/Cybersecurity_Tools/tree/main/Research/FutureSOC">Explore Future SOC</a>
   </article>
+  <article class="card" data-filter-item data-tags="Architecture,Resilience">
+    <div class="card__meta"><span class="category-chip">Architecture</span><span class="category-chip">Resilience</span></div>
+    <h3>CISA: Managing AI Token Consumption</h3>
+    <p>Joint CISA and Canadian Centre for Cyber Security guidance on token allocation, monitoring, and planning for reduced AI-service availability (Oct 2026).</p>
+    <a class="button" href="https://www.cisa.gov/resources-tools/resources/managing-ai-token-consumption-operational-resilience">Visit source</a>
+  </article>
 </div>
 </section>
 
