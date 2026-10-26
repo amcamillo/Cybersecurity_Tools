@@ -1,5 +1,7 @@
 # a WIP of Some Cybersecurity Tools
 
+Documentation site source: [`docs/`](docs/) (configured for GitHub Pages publishing from `main` `/docs`).
+
 Categories:
 - 🔵 Blue
 - 🔴 Red
