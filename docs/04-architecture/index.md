@@ -1,16 +1,31 @@
 ---
 title: Architecture
-nav_order: 5
+description: "Security architecture research and Future SOC resources."
 permalink: /architecture/
 ---
 
-# Cybersecurity Architecture
+<header class="page-header">
+  <span class="eyebrow">Design and operations</span>
+  <h1>Cybersecurity Architecture</h1>
+  <p class="lead">Research that connects security capabilities across identity, endpoints, networks, cloud services, data, and operations.</p>
+</header>
 
-This section is reserved for architecture patterns, design decisions, and research that connect security capabilities across identity, endpoints, networks, cloud services, data, and operations.
+<div class="card-grid card-grid--two">
+  <article class="card">
+    <div class="card__meta"><span class="category-chip">Repository</span><span class="category-chip">Research</span></div>
+    <h3>Research directory</h3>
+    <p>Browse architecture and security-research artifacts maintained in this repository.</p>
+    <a class="button" href="https://github.com/amcamillo/Cybersecurity_Tools/tree/main/Research">Browse research</a>
+  </article>
+  <article class="card">
+    <div class="card__meta"><span class="category-chip">Architecture</span><span class="category-chip">Future SOC</span></div>
+    <h3>Future SOC research</h3>
+    <p>Repository research focused on future security-operations models.</p>
+    <a class="button" href="https://github.com/amcamillo/Cybersecurity_Tools/tree/main/Research/FutureSOC">Explore Future SOC</a>
+  </article>
+</div>
 
-Current starting point:
-
-- [Research directory](https://github.com/amcamillo/Cybersecurity_Tools/tree/main/Research)
-- [Future SOC research](https://github.com/amcamillo/Cybersecurity_Tools/tree/main/Research/FutureSOC)
-
-Future entries should state their assumptions, trust boundaries, dependencies, and source links.
+<div class="empty-state">
+  <h2>Architecture collection in progress</h2>
+  <p>The repository currently links the research collections above. New architecture entries should identify assumptions, trust boundaries, dependencies, and original sources.</p>
+</div>

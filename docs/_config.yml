@@ -1,23 +1,17 @@
 title: Cybersecurity Tools
-description: A work-in-progress catalog of cybersecurity tools, research, detection engineering resources, and demos.
+description: A ThinkInfoSec Hub catalog of cybersecurity tools, research, detection engineering resources, and demos.
 url: "https://amcamillo.github.io"
 baseurl: "/Cybersecurity_Tools"
 
-remote_theme: just-the-docs/just-the-docs
+markdown: kramdown
+permalink: pretty
 
-search_enabled: true
-color_scheme: light
-heading_anchors: true
-logo: "/assets/images/thinkinfosec-logo.png"
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: hub
 
-aux_links:
-  "ThinkInfoSec Hub":
-    - "https://thinkinfosec.org"
-  "Cybersecurity_Tools on GitHub":
-    - "https://github.com/amcamillo/Cybersecurity_Tools"
-
-aux_links_new_tab: true
-footer_content: 'Thinkinfosec Hub &copy; 2021-2026 &middot; <a href="https://thinkinfosec.org">Visit ThinkInfoSec Hub</a>'
-
-plugins:
-  - jekyll-remote-theme
+exclude:
+  - Gemfile
+  - Gemfile.lock

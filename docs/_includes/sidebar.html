@@ -1,0 +1,45 @@
+<aside class="sidebar" aria-label="Site navigation">
+  <div class="sidebar__inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img class="brand__logo" src="{{ '/assets/images/thinkinfosec-logo.png' | relative_url }}" alt="">
+      <span class="brand__copy">
+        <strong>Cybersecurity Tools</strong>
+        <span>ThinkInfoSec Hub · Learn &amp; practice</span>
+      </span>
+    </a>
+
+    <div class="sidebar__actions">
+      <a class="pill-link" href="https://thinkinfosec.org">← Hub</a>
+      <a class="pill-link pill-link--source" href="https://github.com/amcamillo/Cybersecurity_Tools">Public source · GitHub</a>
+    </div>
+
+    <nav class="site-nav" aria-label="Primary">
+      <p class="nav-label">Explore</p>
+      <a href="{{ '/' | relative_url }}" {% if page.permalink == '/' %}aria-current="page"{% endif %}>Home</a>
+      <a href="{{ '/catalog/' | relative_url }}" {% if page.permalink contains '/catalog/' %}aria-current="page"{% endif %}>Catalog</a>
+      <a href="{{ '/detection-engineering/' | relative_url }}" {% if page.permalink contains '/detection-engineering/' %}aria-current="page"{% endif %}>Detection Engineering</a>
+      <a href="{{ '/ai-security/' | relative_url }}" {% if page.permalink == '/ai-security/' %}aria-current="page"{% endif %}>AI Security</a>
+      <a href="{{ '/architecture/' | relative_url }}" {% if page.permalink == '/architecture/' %}aria-current="page"{% endif %}>Architecture</a>
+      <a href="{{ '/community-tools/' | relative_url }}" {% if page.permalink == '/community-tools/' %}aria-current="page"{% endif %}>Community Tools</a>
+      <a href="{{ '/demos/' | relative_url }}" {% if page.permalink == '/demos/' %}aria-current="page"{% endif %}>Demos</a>
+      <a href="{{ '/advisories/' | relative_url }}" {% if page.permalink == '/advisories/' %}aria-current="page"{% endif %}>Advisories</a>
+      <a href="{{ '/about/' | relative_url }}" {% if page.permalink == '/about/' %}aria-current="page"{% endif %}>About</a>
+    </nav>
+
+    <nav class="filter-nav" aria-label="Catalog colors">
+      <p class="nav-label">Catalog colors</p>
+      <a href="{{ '/catalog/blue/' | relative_url }}" {% if page.permalink == '/catalog/blue/' %}aria-current="page"{% endif %}>
+        <span class="swatch swatch--blue"></span><span>Blue</span><small>Defense</small>
+      </a>
+      <a href="{{ '/catalog/red/' | relative_url }}" {% if page.permalink == '/catalog/red/' %}aria-current="page"{% endif %}>
+        <span class="swatch swatch--red"></span><span>Red</span><small>Authorized testing</small>
+      </a>
+      <a href="{{ '/catalog/green/' | relative_url }}" {% if page.permalink == '/catalog/green/' %}aria-current="page"{% endif %}>
+        <span class="swatch swatch--green"></span><span>Green</span><small>Intelligence</small>
+      </a>
+      <a href="{{ '/catalog/purple/' | relative_url }}" {% if page.permalink == '/catalog/purple/' %}aria-current="page"{% endif %}>
+        <span class="swatch swatch--purple"></span><span>Purple</span><small>Validation</small>
+      </a>
+    </nav>
+  </div>
+</aside>
