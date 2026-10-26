@@ -8,12 +8,16 @@ remote_theme: just-the-docs/just-the-docs
 search_enabled: true
 color_scheme: light
 heading_anchors: true
+logo: "/assets/images/thinkinfosec-logo.png"
 
 aux_links:
+  "ThinkInfoSec Hub":
+    - "https://thinkinfosec.org"
   "Cybersecurity_Tools on GitHub":
     - "https://github.com/amcamillo/Cybersecurity_Tools"
 
 aux_links_new_tab: true
+footer_content: 'Thinkinfosec Hub &copy; 2021-2026 &middot; <a href="https://thinkinfosec.org">Visit ThinkInfoSec Hub</a>'
 
 plugins:
   - jekyll-remote-theme
