@@ -9,8 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ '/assets/css/hub.css' | relative_url }}">
-    <script src="{{ '/assets/js/tag-filters.js' | relative_url }}" defer></script>
+    {% assign asset_version = site.time | date: '%s' %}
+    <link rel="stylesheet" href="{{ '/assets/css/hub.css' | relative_url }}?v={{ asset_version }}">
+    <script src="{{ '/assets/js/tag-filters.js' | relative_url }}?v={{ asset_version }}" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
