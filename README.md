@@ -34,6 +34,7 @@ Categories:
 🔑 Password
 - Manager
   1. Keypass https://keepass.info/
+  2. Bitwarden https://bitwarden.com (open source, end-to-end encrypted; prefer signed native CLI binaries over npm, since @bitwarden/cli 2026.4.0 was malicious, CVE-2026-42994)
 
   others cloud-based (more prone to security issues)
 
@@ -113,6 +114,9 @@ Categories:
   1. Burp Suite https://portswigger.net/burp
   2. Nmap https://nmap.org/
 
+- AI pentesting agents (authorized targets only)
+  1. Strix https://github.com/usestrix/strix (run in an isolated VM; avoid 1.0.0–1.0.2, CVE-2026-15519)
+
 🕹️ Games
 - Simulation
   1. Hacking Simulator: https://store.steampowered.com/app/1754840/Hacker_Simulator/
@@ -127,6 +131,9 @@ Categories:
 👩‍💻 Open Source
 - Threat intelligence and community sharing
   1. MISP https://www.misp-project.org/
+
+- OSINT dashboards
+  1. Crucix https://github.com/calesthio/Crucix (local research only; no auth by default, bind to 127.0.0.1)
 
 ------------
 

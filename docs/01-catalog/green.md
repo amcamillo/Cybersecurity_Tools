@@ -38,6 +38,12 @@ permalink: /catalog/green/
     <p>Research artifacts maintained in the repository, including Future SOC material.</p>
     <a class="button" href="https://github.com/amcamillo/Cybersecurity_Tools/tree/main/Research">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Green,OSINT">
+    <div class="card__meta"><span class="team-chip team-chip--green">Green</span><span class="category-chip">OSINT</span></div>
+    <h3>Crucix</h3>
+    <p>Self-hosted OSINT dashboard (AGPL-3.0) that sweeps about 27 public feeds such as GDELT, OpenSky, NASA FIRMS, and sanctions lists into a local view. No auth by default and it binds to all interfaces: keep it on 127.0.0.1, keep API keys out of git, and respect each source's terms.</p>
+    <a class="button" href="https://github.com/calesthio/Crucix">Visit source</a>
+  </article>
 </div>
 </section>
 
