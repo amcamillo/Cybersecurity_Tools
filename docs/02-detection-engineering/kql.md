@@ -38,6 +38,12 @@ permalink: /detection-engineering/kql/
     <p>A repository example for working with local-time conversion.</p>
     <a class="button" href="https://github.com/amcamillo/Cybersecurity_Tools/blob/main/Vendors/Microsoft/Sentinel/KQL/localtime">View example</a>
   </article>
+  <article class="card" data-filter-item data-tags="KQL,Hunting,Microsoft">
+    <div class="card__meta"><span class="category-chip">Hunting</span></div>
+    <h3>LiteLLM supply-chain hunting queries</h3>
+    <p>Microsoft Security Blog advanced hunting queries (Defender XDR) for the compromised LiteLLM 1.107.0 release; Microsoft frames them as investigation leads, not verdicts (Oct 2026).</p>
+    <a class="button" href="https://www.microsoft.com/en-us/security/blog/2026/10/23/inside-the-litellm-1-107-0-supply-chain-compromise-credential-theft-through-python-startup-hooks/">Visit source</a>
+  </article>
 </div>
 </section>
 
