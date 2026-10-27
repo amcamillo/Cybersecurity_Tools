@@ -32,6 +32,12 @@ permalink: /architecture/
     <p>Joint CISA and Canadian Centre for Cyber Security guidance on token allocation, monitoring, and planning for reduced AI-service availability (Oct 2026).</p>
     <a class="button" href="https://www.cisa.gov/resources-tools/resources/managing-ai-token-consumption-operational-resilience">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Architecture,Cryptography">
+    <div class="card__meta"><span class="category-chip">Architecture</span><span class="category-chip">Cryptography</span></div>
+    <h3>NCSC: Using TLS to protect data (PQC update)</h3>
+    <p>UK NCSC TLS guidance v1.2 adds hybrid and pure post-quantum TLS 1.3 profiles (e.g. X25519MLKEM768) following RFC 10024. Only TLS 1.3 supports PQC, so plan TLS 1.2 migration now (Oct 2026).</p>
+    <a class="button" href="https://www.ncsc.gov.uk/guidance/using-tls-to-protect-data">Visit source</a>
+  </article>
 </div>
 </section>
 

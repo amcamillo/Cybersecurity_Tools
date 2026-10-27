@@ -20,11 +20,12 @@ permalink: /detection-engineering/splunk/
     <p>Search Processing Language documentation linked by this repository.</p>
     <a class="button" href="https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/WhatsInThisManual">Visit source</a>
   </article>
-  <div class="empty-state">
-    <h3>Repository examples</h3>
-    <p>No Splunk example set is currently linked from the repository catalog. Start with the reference and test against known data.</p>
-    <a class="text-link" href="https://github.com/amcamillo/Cybersecurity_Tools">View repository</a>
-  </div>
+  <article class="card" data-filter-item data-tags="SPL,Detections,Splunk">
+    <div class="card__meta"><span class="category-chip">Detections</span><span class="category-chip">Splunk</span></div>
+    <h3>PHP2Shell analytic story</h3>
+    <p>Splunk Threat Research Team's published detections (web and endpoint) for PHP2Shell exploitation and post-exploitation activity. Splunk notes any single web result does not confirm exploitation; tune for approved large uploads (Oct 2026).</p>
+    <a class="button" href="https://research.splunk.com/stories/php2shell/">Visit source</a>
+  </article>
 </div>
 </section>
 

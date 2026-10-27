@@ -128,5 +128,11 @@ permalink: /catalog/blue/
     <p>Open-source, end-to-end encrypted password manager (cloud US/EU or self-hosted) with CLI and Secrets Manager. Prefer signed native CLI binaries over npm and pin versions: @bitwarden/cli 2026.4.0 on npm was malicious (CVE-2026-42994, fixed in 2026.4.1).</p>
     <a class="button" href="https://bitwarden.com">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Blue,AppSec">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">AppSec</span></div>
+    <h3>ElectroNG</h3>
+    <p>Doyensec's SAST scanner for Electron apps, open-sourced under Apache-2.0 (Oct 2026), with the ElectroNG-core engine. Caveat from Doyensec: last substantial development was in 2024, so results on recent Electron versions can be incomplete or noisy.</p>
+    <a class="button" href="https://blog.doyensec.com/2026/10/27/electrong-oss.html">Visit source</a>
+  </article>
 </div>
 </section>
