@@ -38,6 +38,12 @@ permalink: /ai-security/
     <p>OWASP GenAI Security Project's eight-phase methodology for authorized adversarial testing of GenAI models, applications, multimodal interfaces, and AI agents (Oct 2026).</p>
     <a class="button" href="https://genai.owasp.org/resource/genai-red-teaming-manual-version-1-0/">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="AI,Standard">
+    <div class="card__meta"><span class="category-chip">AI</span><span class="category-chip">Standard</span></div>
+    <h3>OWASP AISVS 1.0 / 1.01</h3>
+    <p>OWASP Artificial Intelligence Security Verification Standard: testable requirements for AI-enabled applications across 12 chapters (incl. agentic orchestration and MCP), at three levels aligned with ASVS. v1.01 has 213 active requirements; cite the version with each requirement ID (Oct 2026).</p>
+    <a class="button" href="https://github.com/OWASP/AISVS/releases">Visit source</a>
+  </article>
 </div>
 </section>
 

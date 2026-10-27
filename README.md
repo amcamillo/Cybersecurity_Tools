@@ -81,6 +81,9 @@ Categories:
 - Free tools
   1. SANS faculty free tools - more than 150 tools developed by SANS instructors: https://assets.contentstack.io/v3/assets/blt36c2e63521272fdc/bltd8ba96a0fce78883/Free_Faculty_Tools.pdf
 
+- Application security (SAST)
+  1. ElectroNG https://blog.doyensec.com/2026/10/27/electrong-oss.html (Electron app scanner, Apache-2.0; detections last substantially updated in 2024, may be noisy on recent Electron)
+
 📝 Reports
 - Monthly News and reports
   1. In this repo and on this blog: https://medium.com/@andrecamillo
@@ -165,3 +168,6 @@ Categories:
 ### Splunk
 - Language reference
   1. Search Processing Language (SPL) https://help.splunk.com/en/splunk-enterprise/spl-search-reference
+
+- Published detections
+  1. PHP2Shell analytic story (Splunk Threat Research Team) https://research.splunk.com/stories/php2shell/
