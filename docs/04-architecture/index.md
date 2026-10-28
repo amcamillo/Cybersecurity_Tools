@@ -38,6 +38,12 @@ permalink: /architecture/
     <p>UK NCSC TLS guidance v1.2 adds hybrid and pure post-quantum TLS 1.3 profiles (e.g. X25519MLKEM768) following RFC 10024. Only TLS 1.3 supports PQC, so plan TLS 1.2 migration now (Oct 2026).</p>
     <a class="button" href="https://www.ncsc.gov.uk/guidance/using-tls-to-protect-data">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Architecture,Identity,AI">
+    <div class="card__meta"><span class="category-chip">Architecture</span><span class="category-chip">Identity</span></div>
+    <h3>NIST: Design Tenets for Agent Identity Management Systems</h3>
+    <p>Ten risk-based design tenets for agent identity, delegation, least privilege, revocable authorization, policy separation, monitoring, and tamper-evident evidence (Oct 2026).</p>
+    <a class="button" href="https://www.nist.gov/blogs/cybersecurity-insights/design-tenets-agent-identity-management-systems">Visit source</a>
+  </article>
 </div>
 </section>
 

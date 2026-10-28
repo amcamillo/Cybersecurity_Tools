@@ -103,5 +103,11 @@ permalink: /catalog/red/
     <p>Open-source autonomous AI pentesting agents (Apache-2.0). Authorized targets only, in an isolated VM; review the unpinned install script, disable telemetry, and avoid versions 1.0.0–1.0.2 (CVE-2026-15519). PoC and auto-patch claims are vendor claims.</p>
     <a class="button" href="https://github.com/usestrix/strix">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Red,Web,AI">
+    <div class="card__meta"><span class="team-chip team-chip--red">Red</span><span class="category-chip">Web</span></div>
+    <h3>Shannon</h3>
+    <p>AGPL-3.0 AI pentester for web applications and APIs. It executes real exploits: use it only against non-production applications you own or have explicit written authorization to test.</p>
+    <a class="button" href="https://github.com/KeygraphHQ/shannon">Visit source</a>
+  </article>
 </div>
 </section>
