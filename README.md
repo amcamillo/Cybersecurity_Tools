@@ -84,6 +84,13 @@ Categories:
 - Application security (SAST)
   1. ElectroNG https://blog.doyensec.com/2026/10/27/electrong-oss.html (Electron app scanner, Apache-2.0; detections last substantially updated in 2024, may be noisy on recent Electron)
 
+- AI agent security
+  1. NVIDIA SkillSpector https://github.com/NVIDIA/SkillSpector (Apache-2.0 scanner for agent skills and MCP tools; static analysis with optional LLM review and SARIF output)
+  2. Cisco Project Quarry https://github.com/cisco-ai-defense/project-quarry (Apache-2.0 detection language and runtime for agent messages, tool use, and multi-step behavior; alpha)
+
+- Secrets hygiene
+  1. omerta https://github.com/shcherbak-ai/omerta (MIT; checks whether values from untracked env files appear in staged changes, tracked files, or git history)
+
 📝 Reports
 - Monthly News and reports
   1. In this repo and on this blog: https://medium.com/@andrecamillo
@@ -119,6 +126,7 @@ Categories:
 
 - AI pentesting agents (authorized targets only)
   1. Strix https://github.com/usestrix/strix (run in an isolated VM; avoid 1.0.0–1.0.2, CVE-2026-15519)
+  2. Shannon https://github.com/KeygraphHQ/shannon (AGPL-3.0; executes real exploits—use only against non-production apps you own or have explicit written authorization to test)
 
 🕹️ Games
 - Simulation

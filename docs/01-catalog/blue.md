@@ -134,5 +134,23 @@ permalink: /catalog/blue/
     <p>Doyensec's SAST scanner for Electron apps, open-sourced under Apache-2.0 (Oct 2026), with the ElectroNG-core engine. Caveat from Doyensec: last substantial development was in 2024, so results on recent Electron versions can be incomplete or noisy.</p>
     <a class="button" href="https://blog.doyensec.com/2026/10/27/electrong-oss.html">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Blue,AI security">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">AI security</span></div>
+    <h3>NVIDIA SkillSpector</h3>
+    <p>Apache-2.0 scanner for AI agent skills and MCP tools. It combines static analysis with optional LLM review and can emit SARIF results.</p>
+    <a class="button" href="https://github.com/NVIDIA/SkillSpector">Visit source</a>
+  </article>
+  <article class="card" data-filter-item data-tags="Blue,AI security,Detection">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">AI security</span></div>
+    <h3>Cisco Project Quarry</h3>
+    <p>Apache-2.0 detection language and runtime for rules over agent messages, tool calls, results, and event order. The project is in alpha.</p>
+    <a class="button" href="https://github.com/cisco-ai-defense/project-quarry">Visit source</a>
+  </article>
+  <article class="card" data-filter-item data-tags="Blue,Secrets,Git">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">Secrets</span></div>
+    <h3>omerta</h3>
+    <p>MIT-licensed check for values from untracked env files that appear in staged changes, tracked files, or git history.</p>
+    <a class="button" href="https://github.com/shcherbak-ai/omerta">Visit source</a>
+  </article>
 </div>
 </section>

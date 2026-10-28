@@ -44,6 +44,24 @@ permalink: /ai-security/
     <p>OWASP Artificial Intelligence Security Verification Standard: testable requirements for AI-enabled applications across 12 chapters (incl. agentic orchestration and MCP), at three levels aligned with ASVS. v1.01 has 213 active requirements; cite the version with each requirement ID (Oct 2026).</p>
     <a class="button" href="https://github.com/OWASP/AISVS/releases">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="AI,Supply chain,Scanner">
+    <div class="card__meta"><span class="category-chip">AI</span><span class="category-chip">Supply chain</span></div>
+    <h3>NVIDIA SkillSpector</h3>
+    <p>Apache-2.0 scanner for AI agent skills and MCP tools, with static analysis, optional LLM review, and SARIF output.</p>
+    <a class="button" href="https://github.com/NVIDIA/SkillSpector">Visit source</a>
+  </article>
+  <article class="card" data-filter-item data-tags="AI,Detection engineering,Agents">
+    <div class="card__meta"><span class="category-chip">AI</span><span class="category-chip">Detection engineering</span></div>
+    <h3>Cisco Project Quarry</h3>
+    <p>Apache-2.0 detection language and runtime for single- and multi-step behavior across agent messages, tool calls, results, and event order. The project is in alpha.</p>
+    <a class="button" href="https://github.com/cisco-ai-defense/project-quarry">Visit source</a>
+  </article>
+  <article class="card" data-filter-item data-tags="AI,Incident response,Guidance">
+    <div class="card__meta"><span class="category-chip">AI</span><span class="category-chip">Incident response</span></div>
+    <h3>NIST, NSA, and CISA: SI incident readiness</h3>
+    <p>Ten voluntary practices for control incidents during highly capable super-intelligence agent training and evaluation. Its control-incident definition excludes actions directed by adversarial sources such as prompt injection (Oct 2026).</p>
+    <a class="button" href="https://www.cisa.gov/resources-tools/resources/key-practices-incident-readiness-and-response-super-intelligence-training-and-evaluation">Visit source</a>
+  </article>
 </div>
 </section>
 
