@@ -21,6 +21,22 @@ permalink: /advisories/php2shell/
 </div>
 
 <div class="section-heading">
+  <h2><span class="section-kicker">Update · 28 October 2026</span>Exploitation confirmed by government sources</h2>
+  <p>Review state: Active. Patch immediately and investigate suspected compromise.</p>
+</div>
+
+<div class="resource-list">
+  <article class="resource-row">
+    <h3>CISA adds both vulnerabilities to KEV</h3>
+    <p>On 26 October, CISA added CVE-2026-109618 and CVE-2026-109619 to its Known Exploited Vulnerabilities Catalog and <a href="https://www.cisa.gov/news-events/alerts/2026/10/26/cisa-adds-two-known-exploited-vulnerabilities-catalog">announced the additions</a>. Its <a href="https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching">PHP alert, last revised 26 October</a>, records the KEV additions and its 23 October update adding a SIGMA detection rule. The fixed versions remain PHP 8.5.12, 8.4.27, 8.3.36, and 8.2.35.</p>
+  </article>
+  <article class="resource-row">
+    <h3>Government guidance and known limits</h3>
+    <p>Federal civilian agencies received a 29 October remediation deadline. The catalog entries do not identify victims, and the extent of successful attacks remains unclear, according to <a href="https://www.nextgov.com/cybersecurity/2026/10/cisa-gives-federal-agencies-until-thursday-address-exploited-php-flaws/416838/">Nextgov/FCW</a>. The <a href="https://www.ncsc.gov.uk/news/critical-security-issue-affecting-php">UK NCSC guidance</a> calls for immediate action, while New Zealand's NCSC said it was aware of reports of active exploitation, as <a href="https://www.reseller.co.nz/article/4238792/ncsc-issues-alert-over-two-critical-php-flaws.html">reported by Reseller News</a>.</p>
+  </article>
+</div>
+
+<div class="section-heading">
   <h2><span class="section-kicker">Scope</span>Inventory the PHP process</h2>
   <p>The application version is not the right inventory line for an engine vulnerability.</p>
 </div>
@@ -117,7 +133,7 @@ permalink: /advisories/php2shell/
 
 <div class="section-heading">
   <h2><span class="section-kicker">Sources</span>Briefing and references</h2>
-  <p>Pages were read on 26 October 2026. Project and national sources are listed before labelled researcher and vendor material.</p>
+  <p>Original sources were read on 26 October 2026; update sources were read on 28 October 2026. Project and national sources are listed before labelled researcher and vendor material.</p>
 </div>
 
 <div class="resource-list">
