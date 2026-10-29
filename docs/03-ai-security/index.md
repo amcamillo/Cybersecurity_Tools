@@ -62,6 +62,12 @@ permalink: /ai-security/
     <p>Ten voluntary practices for control incidents during highly capable super-intelligence agent training and evaluation. Its control-incident definition excludes actions directed by adversarial sources such as prompt injection (Oct 2026).</p>
     <a class="button" href="https://www.cisa.gov/resources-tools/resources/key-practices-incident-readiness-and-response-super-intelligence-training-and-evaluation">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="AI,Threat research,North Korea">
+    <div class="card__meta"><span class="category-chip">AI</span><span class="category-chip">Threat research</span></div>
+    <h3>Microsoft: North Korean threat actors' AI adoption</h3>
+    <p>Microsoft Threat Intelligence maps observed AI use across research, lures, personas, development, malware, and tooling into four adoption stages, with mitigations and Defender detections (Oct 2026).</p>
+    <a class="button" href="https://www.microsoft.com/en-us/security/blog/2026/10/29/tracking-ai-adoption-in-north-korean-threat-actor-tradecraft/">Visit source</a>
+  </article>
 </div>
 </section>
 
