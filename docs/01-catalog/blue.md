@@ -152,5 +152,23 @@ permalink: /catalog/blue/
     <p>MIT-licensed check for values from untracked env files that appear in staged changes, tracked files, or git history.</p>
     <a class="button" href="https://github.com/shcherbak-ai/omerta">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Blue,AppSec,AI security">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">AppSec</span></div>
+    <h3>GitHub code scanning for AI applications</h3>
+    <p>Public-preview pull-request checks for indirect prompt injection, sensitive-information disclosure, and excessive agency. Requires GitHub Advanced Security and is not yet available on GitHub Enterprise Server.</p>
+    <a class="button" href="https://github.blog/changelog/2026-10-28-code-scanning-for-ai-applications-in-public-preview/">Visit source</a>
+  </article>
+  <article class="card" data-filter-item data-tags="Blue,Cloud,Configuration">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">Cloud</span></div>
+    <h3>CISA ScubaGear and ScubaGoggles</h3>
+    <p>CISA's M365 and Google Workspace secure-configuration baseline assessment tools. The Oct 2026 releases add REST and Policy API assessments, application-risk scoring, and Gemini controls.</p>
+    <a class="button" href="https://www.cisa.gov/news-events/news/cisa-publishes-significant-updates-scubagear-and-scubagoggles">Visit source</a>
+  </article>
+  <article class="card" data-filter-item data-tags="Blue,DFIR,Linux,Detection">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">DFIR</span></div>
+    <h3>Iwatobi</h3>
+    <p>AGPL-3.0 native Sigma scanner and fast-forensics timeline generator for Linux text logs. This is a first public release (Oct 2026); validate its rules and output in your environment.</p>
+    <a class="button" href="https://github.com/Yamato-Security/iwatobi">Visit source</a>
+  </article>
 </div>
 </section>

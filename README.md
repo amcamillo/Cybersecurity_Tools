@@ -83,6 +83,7 @@ Categories:
 
 - Application security (SAST)
   1. ElectroNG https://blog.doyensec.com/2026/10/27/electrong-oss.html (Electron app scanner, Apache-2.0; detections last substantially updated in 2024, may be noisy on recent Electron)
+  2. GitHub code scanning for AI applications https://github.blog/changelog/2026-10-28-code-scanning-for-ai-applications-in-public-preview/ (public-preview pull-request checks for indirect prompt injection, sensitive-data exposure, and excessive agency; requires GitHub Advanced Security)
 
 - AI agent security
   1. NVIDIA SkillSpector https://github.com/NVIDIA/SkillSpector (Apache-2.0 scanner for agent skills and MCP tools; static analysis with optional LLM review and SARIF output)
@@ -90,6 +91,12 @@ Categories:
 
 - Secrets hygiene
   1. omerta https://github.com/shcherbak-ai/omerta (MIT; checks whether values from untracked env files appear in staged changes, tracked files, or git history)
+
+- Cloud security assessment
+  1. CISA ScubaGear and ScubaGoggles https://www.cisa.gov/news-events/news/cisa-publishes-significant-updates-scubagear-and-scubagoggles (M365 and Google Workspace secure-configuration baseline assessment tools; v2.0/v1.1.0)
+
+- Linux DFIR
+  1. Iwatobi https://github.com/Yamato-Security/iwatobi (AGPL-3.0 native Sigma scanner and timeline generator for Linux text logs; first release Oct 2026, validate in your environment)
 
 📝 Reports
 - Monthly News and reports
