@@ -21,6 +21,30 @@ permalink: /advisories/php2shell/
 </div>
 
 <div class="section-heading">
+  <h2><span class="section-kicker">Update · 30 October 2026</span>Vendor confirms exploitation against PAN-OS</h2>
+  <p>Review state: Active. Remove exposed management access, apply vendor hotfixes, and investigate exposed devices for compromise.</p>
+</div>
+
+<div class="resource-list">
+  <article class="resource-row">
+    <h3>Internet-exposed management interfaces targeted</h3>
+    <p><a href="https://security.paloaltonetworks.com/CVE-2026-109618">Palo Alto Networks PSIRT</a> says it has observed active exploitation targeting PAN-OS management interfaces exposed to the internet. The affected surface is strictly the management web interface—the HTTPS web UI and XML API—and a dataplane interface is affected only when a management profile is attached. GlobalProtect portal, gateway, and Clientless VPN services are not affected; neither is Captive Portal.</p>
+  </article>
+  <article class="resource-row">
+    <h3>Vendor-verified campaign and exposure</h3>
+    <p>In its <a href="https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/">29 October threat-brief update</a>, Unit 42 says Dream Research reported a campaign chaining PHP2Shell with a Linux kernel privilege-escalation vulnerability to gain root; Unit 42 independently verified the attacker's tooling and confirmed the reported results. Approximately 0.02% of Palo Alto Networks' global installed base had internet-facing management interfaces configured and were impacted. Separately, Cortex Xpanse telemetry identified more than 22.6 million exposed PHP instances potentially vulnerable.</p>
+  </article>
+  <article class="resource-row">
+    <h3>Chained Linux privilege escalation</h3>
+    <p><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA added CVE-2026-46300 to KEV</a> on 28 October, says it can be chained with PHP2Shell to implant PHP web shells and run commands as root, and set a 31 October federal remediation deadline. <a href="https://thehackernews.com/2026/10/attackers-exploit-php2shell-flaws-in.html">The Hacker News reports</a> that Dream Research calls the Linux issue Fragnesia and observed 25 servers rooted across the United States, Japan, Taiwan, and South Korea.</p>
+  </article>
+  <article class="resource-row">
+    <h3>Defensive priorities</h3>
+    <p>Inventory appliances and products that bundle PHP, including PAN-OS; remove internet exposure from management interfaces; restrict management access to trusted internal IP addresses or a jump box; and upgrade to the <a href="https://security.paloaltonetworks.com/CVE-2026-109618">fixed PAN-OS hotfix builds in the vendor table</a>. Hunt for compromise on devices that were exposed, and patch CVE-2026-46300 in the Linux kernel where applicable.</p>
+  </article>
+</div>
+
+<div class="section-heading">
   <h2><span class="section-kicker">Update · 28 October 2026</span>Exploitation confirmed by government sources</h2>
   <p>Review state: Active. Patch immediately and investigate suspected compromise.</p>
 </div>
@@ -133,7 +157,7 @@ permalink: /advisories/php2shell/
 
 <div class="section-heading">
   <h2><span class="section-kicker">Sources</span>Briefing and references</h2>
-  <p>Original sources were read on 26 October 2026; update sources were read on 28 October 2026. Project and national sources are listed before labelled researcher and vendor material.</p>
+  <p>Original sources were read on 26 October 2026; update sources were read on 28 October 2026 and 30 October 2026. Project, vendor, and national sources are listed before labelled secondary material.</p>
 </div>
 
 <div class="resource-list">
@@ -153,21 +177,31 @@ permalink: /advisories/php2shell/
     </div>
   </article>
   <article class="resource-row">
+    <h3>Palo Alto Networks</h3>
+    <p>Vendor advisory, affected management surface, fixed PAN-OS builds, mitigations, exploitation status, campaign verification, and exposure telemetry.</p>
+    <div>
+      <a class="text-link" href="https://security.paloaltonetworks.com/CVE-2026-109618">PSIRT advisory</a><br>
+      <a class="text-link" href="https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/">Unit 42 threat brief</a>
+    </div>
+  </article>
+  <article class="resource-row">
     <h3>National and coordination advisories</h3>
-    <p>Operational guidance from CISA, the Canadian Centre for Cyber Security, and CERT/CC.</p>
+    <p>Operational guidance and known-exploitation records from CISA, the Canadian Centre for Cyber Security, and CERT/CC.</p>
     <div>
       <a class="text-link" href="https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching">CISA alert</a><br>
+      <a class="text-link" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA KEV catalog</a><br>
       <a class="text-link" href="https://www.cyber.gc.ca/en/alerts-advisories/al26-026-critical-vulnerabilities-impacting-php-cve-2026-109618-cve-2026-109619">Cyber Centre AL26-026</a><br>
       <a class="text-link" href="https://www.kb.cert.org/vuls/id/763488">CERT/CC VU#763488</a>
     </div>
   </article>
   <article class="resource-row">
     <h3>Researcher and vendor bulletins</h3>
-    <p>Labelled secondary material on demonstrated impact, investigation signals, and edge controls.</p>
+    <p>Labelled secondary material on demonstrated impact, investigation signals, edge controls, and campaign details.</p>
     <div>
       <a class="text-link" href="https://www.wiz.io/blog/php2shell-php-rce">Wiz Research</a><br>
       <a class="text-link" href="https://blog.cloudflare.com/php-vulnerabilities-waf-protection/">Cloudflare</a><br>
-      <a class="text-link" href="https://vercel.com/kb/bulletin/php2shell-security-bulletin">Vercel</a>
+      <a class="text-link" href="https://vercel.com/kb/bulletin/php2shell-security-bulletin">Vercel</a><br>
+      <a class="text-link" href="https://thehackernews.com/2026/10/attackers-exploit-php2shell-flaws-in.html">The Hacker News</a>
     </div>
   </article>
 </div>
