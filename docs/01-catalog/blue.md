@@ -86,6 +86,12 @@ permalink: /catalog/blue/
     <p>Privacy-focused operating-system resource in the repository catalog.</p>
     <a class="button" href="https://tails.net/">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Blue,Privacy">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">Privacy</span></div>
+    <h3>CleanYourTV</h3>
+    <p>Open-source Android TV / Google TV debloat and a small native launcher that disables ads, telemetry, and preloaded apps over ADB without root or uninstalling packages. For personal home devices only: review package lists, never expose plaintext network ADB, disable debugging and revoke authorizations afterward, and build from source rather than using APK mirrors.</p>
+    <a class="button" href="https://cleanyour.tv/">Visit source</a>
+  </article>
   <article class="card" data-filter-item data-tags="Blue,Web">
     <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">Web</span></div>
     <h3>urlscan.io</h3>

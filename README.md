@@ -62,6 +62,9 @@ Categories:
   1. Qubes OS https://www.qubes-os.org/
   2. Tails https://tails.net/
 
+- Device debloat / anti-telemetry
+  1. CleanYourTV https://cleanyour.tv/ (open-source Android/Google TV debloat and launcher for personal home devices; review package lists, secure ADB afterward, and avoid third-party APK mirrors)
+
 🕸️ Web
 - URL Scan
   1. https://urlscan.io/
