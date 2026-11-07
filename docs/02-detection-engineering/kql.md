@@ -44,6 +44,12 @@ permalink: /detection-engineering/kql/
     <p>Microsoft Security Blog advanced hunting queries (Defender XDR) for the compromised LiteLLM 1.107.0 release; Microsoft frames them as investigation leads, not verdicts (Oct 2026).</p>
     <a class="button" href="https://www.microsoft.com/en-us/security/blog/2026/10/23/inside-the-litellm-1-107-0-supply-chain-compromise-credential-theft-through-python-startup-hooks/">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="KQL,Defender XDR,GCP,IAM">
+    <div class="card__meta"><span class="category-chip">Published detections</span></div>
+    <h3>Google Cloud Platform IAM XDR detections</h3>
+    <p>Microsoft's pack of 10 KQL custom detections covers logging changes, privileged grants, new credentials, IAM enumeration, and public buckets (Oct 2026). It requires the GCP IAM connector and packaged parser; validate against local telemetry.</p>
+    <a class="button" href="https://github.com/Azure/Azure-Sentinel/tree/79857ee052/Solutions/GoogleCloudPlatformIAM/XDR%20Detections">Visit source</a>
+  </article>
 </div>
 </section>
 
