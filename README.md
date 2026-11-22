@@ -149,10 +149,18 @@ Categories:
 - Web testing
   1. Burp Suite https://portswigger.net/burp
   2. Nmap https://nmap.org/
+  3. Nuclei https://github.com/projectdiscovery/nuclei (MIT template-driven active scanner for HTTP/API, TCP, DNS, TLS, and other protocols; templates and cloud may have distinct terms; authorized targets only, and the README's "zero false positives" statement is a vendor claim)
+  4. Reverse API Engineer (rae) https://github.com/kalil0321/reverse-api-engineer (MIT Python CLI; HIGH RISK: captured HAR data, including cookies or tokens, is sent to the configured LLM; it drives a real Chrome profile by default and uses playwright-stealth evasion—use only on systems you own or are authorized to assess, in an isolated VM, with ToS and legal review; Portuguese Cauhi guide: https://cauhi.com/pt-br/learn/reverse-api-engineer)
 
 - AI pentesting agents (authorized targets only)
   1. Strix https://github.com/usestrix/strix (run in an isolated VM; avoid 1.0.0–1.0.2, CVE-2026-15519)
   2. Shannon https://github.com/KeygraphHQ/shannon (AGPL-3.0; executes real exploits—use only against non-production apps you own or have explicit written authorization to test)
+
+- Secret validation (authorized incident response only)
+  1. TruffleHog https://github.com/trufflesecurity/trufflehog (AGPL-3.0 v3; older versions differ and the enterprise product is separate; can verify credentials against live service APIs and analyze permissions—never test credentials found in public code without explicit authorization)
+
+- LLM red-teaming (authorized systems only)
+  1. NVIDIA garak https://github.com/NVIDIA/garak (Apache-2.0 tool code; models, datasets, and providers have separate terms; modular probes and detectors test LLM applications, but outcomes are probe- and detector-dependent and do not certify model safety)
 
 - Directory assessment (authorized environments only)
   1. BloodHound Community Edition https://github.com/SpecterOps/BloodHound (v9.10 adds an extension marketplace and AD CS ESC11/ESC16 analysis; protect collected relationship data and use matching collectors)

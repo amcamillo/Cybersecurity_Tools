@@ -115,5 +115,29 @@ permalink: /catalog/red/
     <p>Directory relationship and attack-path analysis project. Version 9.10 adds a Community Edition extension marketplace and AD CS ESC11/ESC16 analysis (Nov 2026). Collect only from explicitly authorized environments, use matching collector versions, and protect graph data as sensitive.</p>
     <a class="button" href="https://github.com/SpecterOps/BloodHound/releases/tag/v9.10.0">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Red,Web,Network,Validation">
+    <div class="card__meta"><span class="team-chip team-chip--red">Red</span><span class="category-chip">Web</span></div>
+    <h3>Nuclei</h3>
+    <p>MIT-licensed template-driven active vulnerability scanner for HTTP/API, TCP, DNS, TLS, and other protocols. Templates can include JavaScript, code, file, and headless-browser behavior; community templates and the optional cloud platform may have distinct terms. Run it only against explicitly authorized targets with a defined scope. The README's “zero false positives” statement is a vendor claim, not an established fact.</p>
+    <a class="button" href="https://github.com/projectdiscovery/nuclei">Visit source</a>
+  </article>
+  <article class="card" data-filter-item data-tags="Red,Secrets,Incident response">
+    <div class="card__meta"><span class="team-chip team-chip--red">Red</span><span class="category-chip">Secrets</span></div>
+    <h3>TruffleHog</h3>
+    <p>AGPL-3.0 v3 secret discovery and classification scanner for Git, files, cloud stores, and collaboration systems; older versions differ and the enterprise product is separate. It can actively verify credentials with live service APIs and analyze their permissions. Use active verification only for explicitly authorized incident response; finding credentials in public code is not permission to test them.</p>
+    <a class="button" href="https://github.com/trufflesecurity/trufflehog">Visit source</a>
+  </article>
+  <article class="card" data-filter-item data-tags="Red,AI,Validation">
+    <div class="card__meta"><span class="team-chip team-chip--red">Red</span><span class="category-chip">AI red team</span></div>
+    <h3>NVIDIA garak</h3>
+    <p>Apache-2.0 Generative AI Red-teaming &amp; Assessment Kit with modular probes, generators, and detectors for LLM applications; models, datasets, and providers have separate terms. Test only applications and model endpoints within an explicitly authorized scope, and protect prompts, outputs, and credentials. Results depend on the selected probes and detectors and do not certify model safety.</p>
+    <a class="button" href="https://github.com/NVIDIA/garak">Visit source</a>
+  </article>
+  <article class="card" data-filter-item data-tags="Red,Web,AI,High risk">
+    <div class="card__meta"><span class="team-chip team-chip--red">Red</span><span class="category-chip">High risk</span></div>
+    <h3>Reverse API Engineer (rae)</h3>
+    <p>MIT-licensed Python CLI by kalil0321 for deriving typed clients from captured browser traffic; the <a href="https://cauhi.com/pt-br/learn/reverse-api-engineer">free-to-read proprietary Cauhi guide</a> is a Portuguese process guide by Paulo Cauhi dated 28 Oct 2026. <strong>High risk:</strong> HAR captures can contain cookies and tokens and are sent to the configured LLM; the tool drives a real Chrome profile by default and uses playwright-stealth evasion. Use only on your own systems or with explicit authorization, inside an isolated VM, and account for platform terms and legal exposure.</p>
+    <a class="button" href="https://github.com/kalil0321/reverse-api-engineer">Visit source</a>
+  </article>
 </div>
 </section>
