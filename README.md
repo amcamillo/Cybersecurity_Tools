@@ -88,15 +88,25 @@ Categories:
   1. ElectroNG https://blog.doyensec.com/2026/10/27/electrong-oss.html (Electron app scanner, Apache-2.0; detections last substantially updated in 2024, may be noisy on recent Electron)
   2. GitHub code scanning for AI applications https://github.blog/changelog/2026-10-28-code-scanning-for-ai-applications-in-public-preview/ (public-preview pull-request checks for indirect prompt injection, sensitive-data exposure, and excessive agency; requires GitHub Advanced Security)
   3. CodeCheck by CommBank https://github.com/Commonwealth-Bank-of-Australia/CodeCheck (MIT; Claude Code and Codex plugin for AI-assisted static security review; one-time unsupported release—run in an isolated environment, review every finding, and account for code sent to the model provider)
+  4. Semgrep Community Edition https://github.com/semgrep/semgrep (LGPL-2.1 engine; local pattern and taint analysis across many languages; rule packs and proprietary Pro/platform components have separate terms, and CE cross-file/function limits must be understood)
+  5. Claude Code Security Review https://github.com/anthropics/claude-code-security-review (MIT GitHub Action and prompt for contextual, diff-aware review; invokes Claude Code and can comment on pull requests or upload artifacts; not a replacement for tests or human AppSec)
+
+- Software composition analysis (SCA)
+  1. OSV-Scanner https://github.com/google/osv-scanner (Apache-2.0; scans dependency manifests, lockfiles, supported artifacts, and container packages against OSV advisories; results depend on extraction, version mapping, and advisory coverage and do not prove exploitability)
+
+- CI/CD security
+  1. zizmor https://github.com/zizmorcore/zizmor (MIT Rust static analyzer for GitHub Actions, Dependabot, and pre-commit configuration; a clean report does not prove referenced actions are benign)
 
 - AI agent security
   1. NVIDIA SkillSpector https://github.com/NVIDIA/SkillSpector (Apache-2.0 scanner for agent skills and MCP tools; static analysis with optional LLM review and SARIF output)
   2. Cisco Project Quarry https://github.com/cisco-ai-defense/project-quarry (Apache-2.0 detection language and runtime for agent messages, tool use, and multi-step behavior; alpha)
   3. NVIDIA SkillEvaluator https://github.com/NVIDIA/SkillEvaluator (Apache-2.0 quality, security, compatibility, and runtime evaluation for agent skills; advisory and model-based results do not prove a skill safe)
+  4. Cloudflare security-audit-skill https://github.com/cloudflare/security-audit-skill (MIT coding-agent audit workflow with JavaScript validators and Markdown skill files; not a standalone scanner, and no independent effectiveness benchmark is established here)
 
 - Secrets hygiene
   1. omerta https://github.com/shcherbak-ai/omerta (MIT; checks whether values from untracked env files appear in staged changes, tracked files, or git history)
   2. GitHub secret scanning on demand https://github.blog/changelog/2026-11-17-secret-scanning-on-demand-for-developers-and-agents/ (public preview for Copilot security review; opt-in, scans current changes rather than repository history, and may consume Secret Protection AI credits)
+  3. Gitleaks https://github.com/gitleaks/gitleaks (MIT CLI; pattern/entropy-based offline secret detection for Git history, directories, and stdin with configurable rules, baselines, redaction, and SARIF/JSON output; the separate Gitleaks Action may have different terms)
 
 - Cloud security assessment
   1. CISA ScubaGear and ScubaGoggles https://www.cisa.gov/news-events/news/cisa-publishes-significant-updates-scubagear-and-scubagoggles (M365 and Google Workspace secure-configuration baseline assessment tools; v2.0/v1.1.0)

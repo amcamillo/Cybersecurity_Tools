@@ -194,5 +194,41 @@ permalink: /catalog/blue/
     <p>Public-preview secret scanning inside Copilot security review for CLI, app, SDK, and code-review workflows (Nov 2026). It is opt-in, checks current changes rather than repository history, excludes VS Code, has SDK authentication restrictions, and may consume Secret Protection AI credits.</p>
     <a class="button" href="https://github.blog/changelog/2026-11-17-secret-scanning-on-demand-for-developers-and-agents/">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Blue,CI,Git,AppSec">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">CI/CD security</span></div>
+    <h3>zizmor</h3>
+    <p>MIT-licensed Rust static analyzer for GitHub Actions, Dependabot, and pre-commit configuration. It detects template injection, credential persistence, excessive permissions, and confusing or unpinned Git references, and offers findings and fixes. It provides a specialist workflow-security layer alongside actionlint, Semgrep, and OpenSSF Scorecard; a clean report does not prove referenced actions are benign.</p>
+    <a class="button" href="https://github.com/zizmorcore/zizmor">Visit source</a>
+  </article>
+  <article class="card" data-filter-item data-tags="Blue,AppSec,SCA,Dependencies">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">SCA</span></div>
+    <h3>OSV-Scanner</h3>
+    <p>Apache-2.0 Go vulnerability scanner from Google and frontend for OSV-Scalibr. It scans dependency manifests, lockfiles, supported artifacts, and container packages against OSV advisories, with offline databases, license checks, and experimental guided remediation. Results depend on accurate extraction, version mapping, and upstream advisory coverage and do not prove exploitability.</p>
+    <a class="button" href="https://github.com/google/osv-scanner">Visit source</a>
+  </article>
+  <article class="card" data-filter-item data-tags="Blue,Secrets,Git,AppSec">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">Secrets</span></div>
+    <h3>Gitleaks</h3>
+    <p>MIT-licensed Go CLI for pattern- and entropy-based secret detection in Git history, directories, and stdin. It supports configurable rules, baselines, decoding and archive limits, redaction, and SARIF/JSON output. It is an offline pre-commit and CI gate that complements active verification; the separate Gitleaks Action may have different terms.</p>
+    <a class="button" href="https://github.com/gitleaks/gitleaks">Visit source</a>
+  </article>
+  <article class="card" data-filter-item data-tags="Blue,AppSec,SAST">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">AppSec</span></div>
+    <h3>Semgrep Community Edition</h3>
+    <p>LGPL-2.1 local static-analysis engine and CLI with code-like rules, pattern matching, and taint analysis across many languages. It integrates with IDEs, pre-commit, CI, and MCP without mandatory cloud source upload. Rule packs and proprietary Pro, AppSec, and Assistant components have separate terms; understand CE cross-file and cross-function limits.</p>
+    <a class="button" href="https://github.com/semgrep/semgrep">Visit source</a>
+  </article>
+  <article class="card" data-filter-item data-tags="Blue,AppSec,AI security,Git">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">AppSec</span></div>
+    <h3>Claude Code Security Review</h3>
+    <p>Anthropic's MIT-licensed GitHub Action and Claude Code security-review prompt for contextual, diff-aware code review. Python orchestration invokes Claude Code and filters findings, then can comment on pull requests and upload artifacts. It adds semantic review alongside SAST but does not replace tests or human AppSec review.</p>
+    <a class="button" href="https://github.com/anthropics/claude-code-security-review">Visit source</a>
+  </article>
+  <article class="card" data-filter-item data-tags="Blue,AppSec,AI security,Audit">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">AI security</span></div>
+    <h3>Cloudflare security-audit-skill</h3>
+    <p>MIT-licensed coding-agent audit workflow covering reconnaissance, coverage-led hunting, adversarial candidate validation, structured findings, independent verification, and reporting. It consists of JavaScript validators and Markdown skill files rather than a standalone scanner. It supports repeatable evidence-linked repository audits; no independent effectiveness benchmark is established here.</p>
+    <a class="button" href="https://github.com/cloudflare/security-audit-skill">Visit source</a>
+  </article>
 </div>
 </section>
