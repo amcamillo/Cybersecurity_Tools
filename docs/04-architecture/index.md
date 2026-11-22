@@ -44,6 +44,12 @@ permalink: /architecture/
     <p>Ten risk-based design tenets for agent identity, delegation, least privilege, revocable authorization, policy separation, monitoring, and tamper-evident evidence (Oct 2026).</p>
     <a class="button" href="https://www.nist.gov/blogs/cybersecurity-insights/design-tenets-agent-identity-management-systems">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Architecture,Resilience,AI">
+    <div class="card__meta"><span class="category-chip">Architecture</span><span class="category-chip">AI</span></div>
+    <h3>UK regulators: AI cyber risk and resilience practices</h3>
+    <p>Non-binding Bank of England, PRA, and FCA practices for AI cyber resilience cover governance, threat modeling, controlled tool access, validation, human review, zero trust, segmentation, least privilege, monitoring, and recovery (Nov 2026).</p>
+    <a class="button" href="https://www.bankofengland.co.uk/prudential-regulation/publication/2026/november/effective-practices-cyber-risk-and-resilience-management-relating-to-artificial-intelligence">Visit source</a>
+  </article>
 </div>
 </section>
 

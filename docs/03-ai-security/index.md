@@ -68,6 +68,24 @@ permalink: /ai-security/
     <p>Microsoft Threat Intelligence maps observed AI use across research, lures, personas, development, malware, and tooling into four adoption stages, with mitigations and Defender detections (Oct 2026).</p>
     <a class="button" href="https://www.microsoft.com/en-us/security/blog/2026/10/29/tracking-ai-adoption-in-north-korean-threat-actor-tradecraft/">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="AI,AppSec,Scanner">
+    <div class="card__meta"><span class="category-chip">AI</span><span class="category-chip">AppSec</span></div>
+    <h3>CodeCheck by CommBank</h3>
+    <p>MIT-licensed Claude Code and Codex plugin for AI-assisted static security review (Nov 2026). It is a one-time, unsupported release; use an isolated environment, review every finding, and account for code sent to the model provider.</p>
+    <a class="button" href="https://github.com/Commonwealth-Bank-of-Australia/CodeCheck">Visit source</a>
+  </article>
+  <article class="card" data-filter-item data-tags="AI,Threat research,Agents">
+    <div class="card__meta"><span class="category-chip">AI</span><span class="category-chip">Threat research</span></div>
+    <h3>Google: Agentic Threat Activity Crosses a Significant Threshold</h3>
+    <p>Google Threat Intelligence Group and Mandiant report observed adversary use of autonomous multi-agent frameworks, automated patch analysis, LLM credential theft, and AI-assisted information operations, with defensive recommendations (Nov 2026).</p>
+    <a class="button" href="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold">Visit source</a>
+  </article>
+  <article class="card" data-filter-item data-tags="AI,Threat research,Identity">
+    <div class="card__meta"><span class="category-chip">AI</span><span class="category-chip">Threat research</span></div>
+    <h3>Microsoft: Device-code authentication risks for AI coding agents</h3>
+    <p>Controlled-lab research shows how a victim-approved device-code request could expose private repositories, synced sessions, agent memory, or an enabled remote session, depending on granted permissions and configuration. Microsoft states these were proof-of-concept outcomes, not observed attacks (Nov 2026).</p>
+    <a class="button" href="https://www.microsoft.com/en-us/security/blog/2026/11/17/the-risks-of-device-code-authentication-for-ai-coding-agents/">Visit source</a>
+  </article>
 </div>
 </section>
 

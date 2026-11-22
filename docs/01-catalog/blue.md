@@ -176,5 +176,17 @@ permalink: /catalog/blue/
     <p>AGPL-3.0 native Sigma scanner and fast-forensics timeline generator for Linux text logs. This is a first public release (Oct 2026); validate its rules and output in your environment.</p>
     <a class="button" href="https://github.com/Yamato-Security/iwatobi">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Blue,AppSec,AI security">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">AppSec</span></div>
+    <h3>CodeCheck by CommBank</h3>
+    <p>MIT-licensed Claude Code and Codex plugin for AI-assisted static security review (Nov 2026). CommBank published it as a one-time, unsupported release: run it in an isolated environment, review every finding, and account for source code sent to the model provider.</p>
+    <a class="button" href="https://github.com/Commonwealth-Bank-of-Australia/CodeCheck">Visit source</a>
+  </article>
+  <article class="card" data-filter-item data-tags="Blue,Network,Deception">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">Deception</span></div>
+    <h3>ReD-Pot Community Edition</h3>
+    <p>MIT-licensed internal-network deception platform with decoy servers, honeytokens, and an attack-path console (Nov 2026). Community Edition is limited to three decoys and supports fresh installs only.</p>
+    <a class="button" href="https://github.com/RedSideSecurity/ReD-Pot">Visit source</a>
+  </article>
 </div>
 </section>

@@ -87,6 +87,7 @@ Categories:
 - Application security (SAST)
   1. ElectroNG https://blog.doyensec.com/2026/10/27/electrong-oss.html (Electron app scanner, Apache-2.0; detections last substantially updated in 2024, may be noisy on recent Electron)
   2. GitHub code scanning for AI applications https://github.blog/changelog/2026-10-28-code-scanning-for-ai-applications-in-public-preview/ (public-preview pull-request checks for indirect prompt injection, sensitive-data exposure, and excessive agency; requires GitHub Advanced Security)
+  3. CodeCheck by CommBank https://github.com/Commonwealth-Bank-of-Australia/CodeCheck (MIT; Claude Code and Codex plugin for AI-assisted static security review; one-time unsupported release—run in an isolated environment, review every finding, and account for code sent to the model provider)
 
 - AI agent security
   1. NVIDIA SkillSpector https://github.com/NVIDIA/SkillSpector (Apache-2.0 scanner for agent skills and MCP tools; static analysis with optional LLM review and SARIF output)
@@ -100,6 +101,9 @@ Categories:
 
 - Linux DFIR
   1. Iwatobi https://github.com/Yamato-Security/iwatobi (AGPL-3.0 native Sigma scanner and timeline generator for Linux text logs; first release Oct 2026, validate in your environment)
+
+- Deception
+  1. ReD-Pot Community Edition https://github.com/RedSideSecurity/ReD-Pot (MIT internal-network decoys, honeytokens, and attack-path console; Community Edition is limited to three decoys and supports fresh installs only)
 
 📝 Reports
 - Monthly News and reports
