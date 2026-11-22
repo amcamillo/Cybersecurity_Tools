@@ -109,5 +109,11 @@ permalink: /catalog/red/
     <p>AGPL-3.0 AI pentester for web applications and APIs. It executes real exploits: use it only against non-production applications you own or have explicit written authorization to test.</p>
     <a class="button" href="https://github.com/KeygraphHQ/shannon">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Red,Identity,Directory">
+    <div class="card__meta"><span class="team-chip team-chip--red">Red</span><span class="category-chip">Identity</span></div>
+    <h3>BloodHound Community Edition</h3>
+    <p>Directory relationship and attack-path analysis project. Version 9.10 adds a Community Edition extension marketplace and AD CS ESC11/ESC16 analysis (Nov 2026). Collect only from explicitly authorized environments, use matching collector versions, and protect graph data as sensitive.</p>
+    <a class="button" href="https://github.com/SpecterOps/BloodHound/releases/tag/v9.10.0">Visit source</a>
+  </article>
 </div>
 </section>

@@ -50,6 +50,18 @@ permalink: /architecture/
     <p>Non-binding Bank of England, PRA, and FCA practices for AI cyber resilience cover governance, threat modeling, controlled tool access, validation, human review, zero trust, segmentation, least privilege, monitoring, and recovery (Nov 2026).</p>
     <a class="button" href="https://www.bankofengland.co.uk/prudential-regulation/publication/2026/november/effective-practices-cyber-risk-and-resilience-management-relating-to-artificial-intelligence">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Architecture,OT,Critical infrastructure">
+    <div class="card__meta"><span class="category-chip">Architecture</span><span class="category-chip">OT</span></div>
+    <h3>CISA: Dams Sector Cybersecurity Framework guidance</h3>
+    <p>Voluntary, risk-based guidance for dam owners and operators to apply cybersecurity practices according to organizational size, risk, and capability (Nov 2026). It is sector-specific and does not create additional regulatory requirements.</p>
+    <a class="button" href="https://www.cisa.gov/resources-tools/resources/dams-sector-cybersecurity-framework-implementation-guidance">Visit source</a>
+  </article>
+  <article class="card" data-filter-item data-tags="Architecture,Identity,Digital credentials">
+    <div class="card__meta"><span class="category-chip">Architecture</span><span class="category-chip">Identity</span></div>
+    <h3>NIST SP 1800-42: Mobile driver's license guidance</h3>
+    <p>Updated draft guidance for secure, interoperable mobile driver's licenses adds credential-revocation, same-device, quantum-risk, privacy, fraud-control, and reference-architecture material (Nov 2026). These are public-comment drafts, not final standards.</p>
+    <a class="button" href="https://www.nist.gov/news-events/news/2026/11/updated-guidelines-accelerating-adoption-mobile-drivers-licenses-mdl">Visit source</a>
+  </article>
 </div>
 </section>
 

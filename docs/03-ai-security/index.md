@@ -86,6 +86,12 @@ permalink: /ai-security/
     <p>Controlled-lab research shows how a victim-approved device-code request could expose private repositories, synced sessions, agent memory, or an enabled remote session, depending on granted permissions and configuration. Microsoft states these were proof-of-concept outcomes, not observed attacks (Nov 2026).</p>
     <a class="button" href="https://www.microsoft.com/en-us/security/blog/2026/11/17/the-risks-of-device-code-authentication-for-ai-coding-agents/">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="AI,Skills,Evaluation">
+    <div class="card__meta"><span class="category-chip">AI</span><span class="category-chip">Evaluation</span></div>
+    <h3>NVIDIA SkillEvaluator 1.0</h3>
+    <p>Apache-2.0 quality, security, cross-harness compatibility, and runtime evaluation for agent skills, with CI workflows and JUnit reporting (Nov 2026). Advisory checks and model-based evaluations do not prove a skill safe; inspect and sandbox untrusted skills and hooks.</p>
+    <a class="button" href="https://github.com/NVIDIA/SkillEvaluator/releases/tag/v1.0.1">Visit source</a>
+  </article>
 </div>
 </section>
 

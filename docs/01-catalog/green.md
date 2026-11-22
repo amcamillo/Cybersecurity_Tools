@@ -44,6 +44,12 @@ permalink: /catalog/green/
     <p>Self-hosted OSINT dashboard (AGPL-3.0) that sweeps about 27 public feeds such as GDELT, OpenSky, NASA FIRMS, and sanctions lists into a local view. No auth by default and it binds to all interfaces: keep it on 127.0.0.1, keep API keys out of git, and respect each source's terms.</p>
     <a class="button" href="https://github.com/calesthio/Crucix">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Green,Intelligence,Detection">
+    <div class="card__meta"><span class="team-chip team-chip--green">Green</span><span class="category-chip">Detection</span></div>
+    <h3>ThreatDefence Agentic Attack Detections</h3>
+    <p>MIT-licensed rules and sourced indicators for agentic attack frameworks in formats including KQL, Sigma, Suricata, Zeek, YARA, STIX, Splunk, Elastic, and WAF rules (Nov 2026). The maintainers label every rule experimental and report no testing against captured real intrusions.</p>
+    <a class="button" href="https://github.com/ThreatDefence/agentic-attack-detections">Visit source</a>
+  </article>
 </div>
 </section>
 

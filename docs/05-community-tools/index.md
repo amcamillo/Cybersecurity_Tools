@@ -38,6 +38,12 @@ permalink: /community-tools/
     <p>Automated adversary emulation for isolated or approved environments.</p>
     <a class="button" href="https://caldera.mitre.org/">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Green,Intelligence,Detection">
+    <div class="card__meta"><span class="team-chip team-chip--green">Green</span><span class="category-chip">Detection</span></div>
+    <h3>ThreatDefence Agentic Attack Detections</h3>
+    <p>Open multi-format rules and indicators for agentic attack frameworks. All rules are experimental and have not been tested against captured real intrusions; validate locally before operational use.</p>
+    <a class="button" href="https://github.com/ThreatDefence/agentic-attack-detections">Visit source</a>
+  </article>
 </div>
 </section>
 

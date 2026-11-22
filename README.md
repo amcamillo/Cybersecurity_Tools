@@ -92,6 +92,7 @@ Categories:
 - AI agent security
   1. NVIDIA SkillSpector https://github.com/NVIDIA/SkillSpector (Apache-2.0 scanner for agent skills and MCP tools; static analysis with optional LLM review and SARIF output)
   2. Cisco Project Quarry https://github.com/cisco-ai-defense/project-quarry (Apache-2.0 detection language and runtime for agent messages, tool use, and multi-step behavior; alpha)
+  3. NVIDIA SkillEvaluator https://github.com/NVIDIA/SkillEvaluator (Apache-2.0 quality, security, compatibility, and runtime evaluation for agent skills; advisory and model-based results do not prove a skill safe)
 
 - Secrets hygiene
   1. omerta https://github.com/shcherbak-ai/omerta (MIT; checks whether values from untracked env files appear in staged changes, tracked files, or git history)
@@ -142,6 +143,9 @@ Categories:
   1. Strix https://github.com/usestrix/strix (run in an isolated VM; avoid 1.0.0–1.0.2, CVE-2026-15519)
   2. Shannon https://github.com/KeygraphHQ/shannon (AGPL-3.0; executes real exploits—use only against non-production apps you own or have explicit written authorization to test)
 
+- Directory assessment (authorized environments only)
+  1. BloodHound Community Edition https://github.com/SpecterOps/BloodHound (v9.10 adds an extension marketplace and AD CS ESC11/ESC16 analysis; protect collected relationship data and use matching collectors)
+
 🕹️ Games
 - Simulation
   1. Hacking Simulator: https://store.steampowered.com/app/1754840/Hacker_Simulator/
@@ -159,6 +163,9 @@ Categories:
 
 - OSINT dashboards
   1. Crucix https://github.com/calesthio/Crucix (local research only; no auth by default, bind to 127.0.0.1)
+
+- Agentic attack intelligence and detections
+  1. ThreatDefence Agentic Attack Detections https://github.com/ThreatDefence/agentic-attack-detections (MIT multi-format rules and indicators; all rules are experimental and have not been tested against captured real intrusions)
 
 ------------
 
