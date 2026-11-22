@@ -188,5 +188,11 @@ permalink: /catalog/blue/
     <p>MIT-licensed internal-network deception platform with decoy servers, honeytokens, and an attack-path console (Nov 2026). Community Edition is limited to three decoys and supports fresh installs only.</p>
     <a class="button" href="https://github.com/RedSideSecurity/ReD-Pot">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Blue,Secrets,Git,AI security">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">Secrets</span></div>
+    <h3>GitHub secret scanning on demand</h3>
+    <p>Public-preview secret scanning inside Copilot security review for CLI, app, SDK, and code-review workflows (Nov 2026). It is opt-in, checks current changes rather than repository history, excludes VS Code, has SDK authentication restrictions, and may consume Secret Protection AI credits.</p>
+    <a class="button" href="https://github.blog/changelog/2026-11-17-secret-scanning-on-demand-for-developers-and-agents/">Visit source</a>
+  </article>
 </div>
 </section>

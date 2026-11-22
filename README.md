@@ -96,6 +96,7 @@ Categories:
 
 - Secrets hygiene
   1. omerta https://github.com/shcherbak-ai/omerta (MIT; checks whether values from untracked env files appear in staged changes, tracked files, or git history)
+  2. GitHub secret scanning on demand https://github.blog/changelog/2026-11-17-secret-scanning-on-demand-for-developers-and-agents/ (public preview for Copilot security review; opt-in, scans current changes rather than repository history, and may consume Secret Protection AI credits)
 
 - Cloud security assessment
   1. CISA ScubaGear and ScubaGoggles https://www.cisa.gov/news-events/news/cisa-publishes-significant-updates-scubagear-and-scubagoggles (M365 and Google Workspace secure-configuration baseline assessment tools; v2.0/v1.1.0)
@@ -159,7 +160,7 @@ Categories:
 
 👩‍💻 Open Source
 - Threat intelligence and community sharing
-  1. MISP https://www.misp-project.org/
+  1. MISP https://www.misp-project.org/ (2.5.52 is a major security release requiring Python 3.11+; Modules 3.1.5 adds DFIR, threat-hunting, KQL/YARA, and STIX 2.1 integrations—validate imported mappings and provenance)
 
 - OSINT dashboards
   1. Crucix https://github.com/calesthio/Crucix (local research only; no auth by default, bind to 127.0.0.1)

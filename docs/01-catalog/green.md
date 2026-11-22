@@ -17,8 +17,8 @@ permalink: /catalog/green/
   <article class="card card--featured" data-filter-item data-tags="Green,Intelligence">
     <div class="card__meta"><span class="team-chip team-chip--green">Green</span><span class="category-chip">Intelligence</span></div>
     <h3>MISP</h3>
-    <p>Open-source threat-intelligence sharing platform.</p>
-    <a class="button" href="https://www.misp-project.org/">Visit source</a>
+    <p>Open-source threat-intelligence sharing platform. Version 2.5.52 is a major security release and requires Python 3.11+; <a href="https://github.com/MISP/misp-modules/releases/tag/v3.1.5">Modules 3.1.5</a> adds DFIR, threat-hunting, KQL/YARA, and STIX 2.1 integrations. Validate imported artifact mappings and provenance.</p>
+    <a class="button" href="https://github.com/MISP/MISP/releases/tag/v2.5.52">Visit source</a>
   </article>
   <article class="card" data-filter-item data-tags="Green,Knowledge base">
     <div class="card__meta"><span class="team-chip team-chip--green">Green</span><span class="category-chip">Knowledge base</span></div>
