@@ -98,6 +98,12 @@ permalink: /ai-security/
     <p>Apache-2.0 preview sandbox with OS isolation and default-deny policy controls for files, commands, network requests, and MCP calls. Its <a href="https://strandsagents.com/blog/strands-box-cli/">Nov 2026 update</a> adds profiles for Claude Code, Codex, and Kiro CLI. Routed credentials stay outside the agent, but policy-readable project secrets remain visible.</p>
     <a class="button" href="https://github.com/strands-agents/box">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="AI,Scanner,MCP,AppSec">
+    <div class="card__meta"><span class="category-chip">AI</span><span class="category-chip">Scanner</span></div>
+    <h3>Nox</h3>
+    <p>Apache-2.0 polyglot scanner for AI applications, MCP configurations, dependencies, IaC, secrets, and CI workflows. <a href="https://github.com/Nox-HQ/nox/releases/tag/v1.70.0">Version 1.70.0</a> adds hidden-instruction checks for MCP tool descriptions and GitHub Actions cache-poisoning and pwn-request checks (Nov 2026). Validate findings and remediation locally.</p>
+    <a class="button" href="https://github.com/Nox-HQ/nox">Visit source</a>
+  </article>
 </div>
 </section>
 
