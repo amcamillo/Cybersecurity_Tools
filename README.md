@@ -69,6 +69,9 @@ Categories:
 - URL Scan
   1. https://urlscan.io/
 
+- Web application firewall and runtime security
+  1. WAFio 2.0 https://wafio.cloud/blog/wafio-2-released-rust-waf-agent-open-source (most components are now source-available under GPL licenses, including the [Rust reverse-proxy agent](https://github.com/Wafio/wafio-agent-waf); v2 removes OWASP CRS in favor of WAFio's semantic engines, so treat published performance figures as vendor-run and tune in log mode before blocking)
+
 💻 Endpoint
 - Endpoint EDR
   1. Microsoft Defender https://www.microsoft.com/en-us/security/business/endpoint-security/microsoft-defender-endpoint

@@ -242,5 +242,11 @@ permalink: /catalog/blue/
     <p>Apache-2.0 polyglot scanner for AI applications, MCP configurations, dependencies, IaC, secrets, and CI workflows. <a href="https://github.com/Nox-HQ/nox/releases/tag/v1.70.0">Version 1.70.0</a> adds hidden-instruction checks for MCP tool descriptions and GitHub Actions cache-poisoning and pwn-request checks (Nov 2026). Validate findings and remediation locally.</p>
     <a class="button" href="https://github.com/Nox-HQ/nox">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Blue,Web,WAF,Runtime security">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">Web</span></div>
+    <h3>WAFio 2.0</h3>
+    <p>Web application firewall and runtime-security stack whose control plane, dashboard, host agent, and <a href="https://github.com/Wafio/wafio-agent-waf">Rust reverse-proxy agent</a> are now published under open-source licenses (Nov 2026). Version 2 removes OWASP CRS in favor of WAFio's semantic engines; treat its performance figures as vendor-run and tune engines in log mode before blocking.</p>
+    <a class="button" href="https://wafio.cloud/blog/wafio-2-released-rust-waf-agent-open-source">Visit announcement</a>
+  </article>
 </div>
 </section>
