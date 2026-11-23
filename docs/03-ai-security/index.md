@@ -92,6 +92,12 @@ permalink: /ai-security/
     <p>Apache-2.0 quality, security, cross-harness compatibility, and runtime evaluation for agent skills, with CI workflows and JUnit reporting (Nov 2026). Advisory checks and model-based evaluations do not prove a skill safe; inspect and sandbox untrusted skills and hooks.</p>
     <a class="button" href="https://github.com/NVIDIA/SkillEvaluator/releases/tag/v1.0.1">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="AI,Sandbox,Policy">
+    <div class="card__meta"><span class="category-chip">AI</span><span class="category-chip">Sandbox</span></div>
+    <h3>Strands Box</h3>
+    <p>Apache-2.0 preview sandbox with OS isolation and default-deny policy controls for files, commands, network requests, and MCP calls. Its <a href="https://strandsagents.com/blog/strands-box-cli/">Nov 2026 update</a> adds profiles for Claude Code, Codex, and Kiro CLI. Routed credentials stay outside the agent, but policy-readable project secrets remain visible.</p>
+    <a class="button" href="https://github.com/strands-agents/box">Visit source</a>
+  </article>
 </div>
 </section>
 

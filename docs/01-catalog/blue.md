@@ -230,5 +230,11 @@ permalink: /catalog/blue/
     <p>MIT-licensed coding-agent audit workflow covering reconnaissance, coverage-led hunting, adversarial candidate validation, structured findings, independent verification, and reporting. It consists of JavaScript validators and Markdown skill files rather than a standalone scanner. It supports repeatable evidence-linked repository audits; no independent effectiveness benchmark is established here.</p>
     <a class="button" href="https://github.com/cloudflare/security-audit-skill">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Blue,AI security,Sandbox,Policy">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">AI security</span></div>
+    <h3>Strands Box</h3>
+    <p>Apache-2.0 preview sandbox with OS isolation and default-deny policy controls for files, commands, network requests, and MCP calls. Its <a href="https://strandsagents.com/blog/strands-box-cli/">Nov 2026 update</a> adds profiles for Claude Code, Codex, and Kiro CLI. Routed credentials stay outside the agent, but secrets in policy-readable project files remain visible.</p>
+    <a class="button" href="https://github.com/strands-agents/box">Visit source</a>
+  </article>
 </div>
 </section>

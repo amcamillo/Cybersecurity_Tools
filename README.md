@@ -102,6 +102,7 @@ Categories:
   2. Cisco Project Quarry https://github.com/cisco-ai-defense/project-quarry (Apache-2.0 detection language and runtime for agent messages, tool use, and multi-step behavior; alpha)
   3. NVIDIA SkillEvaluator https://github.com/NVIDIA/SkillEvaluator (Apache-2.0 quality, security, compatibility, and runtime evaluation for agent skills; advisory and model-based results do not prove a skill safe)
   4. Cloudflare security-audit-skill https://github.com/cloudflare/security-audit-skill (MIT coding-agent audit workflow with JavaScript validators and Markdown skill files; not a standalone scanner, and no independent effectiveness benchmark is established here)
+  5. Strands Box https://github.com/strands-agents/box (Apache-2.0 preview sandbox with default-deny policy controls for files, commands, network, and MCP calls; its [Nov 2026 update](https://strandsagents.com/blog/strands-box-cli/) adds Claude Code, Codex, and Kiro CLI profiles; routed credentials stay outside the agent, but project secrets remain readable if policy permits them)
 
 - Secrets hygiene
   1. omerta https://github.com/shcherbak-ai/omerta (MIT; checks whether values from untracked env files appear in staged changes, tracked files, or git history)
