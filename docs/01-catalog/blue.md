@@ -254,5 +254,11 @@ permalink: /catalog/blue/
     <p>BSD-2-Clause pre-release eBPF security platform from OpenAI and Cisco for signed live mitigations and TPM-measured verification (Nov 2026). Production targets currently require Shirudo's kernel patches, signed-loader ABI, and TPM 2.0; the published exploit-blocking demonstrations are vendor-run, not independent validation.</p>
     <a class="button" href="https://github.com/shirudo-dev/shirudo">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Blue,AI security,Evaluation,Tool use">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">AI security</span></div>
+    <h3>ViKernel Scanner</h3>
+    <p>Apache-2.0 AI-model safety evaluator that records attempted calls to mock tools under attack checks and normal-work controls (Nov 2026). Nothing real executes, but the free edition covers four of six domains and receives its check set from a central service; treat its grades as scoped test results, not a general security certification.</p>
+    <a class="button" href="https://github.com/final-bench/vikernel-scanner">Visit source</a>
+  </article>
 </div>
 </section>

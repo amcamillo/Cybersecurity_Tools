@@ -104,6 +104,12 @@ permalink: /ai-security/
     <p>Apache-2.0 polyglot scanner for AI applications, MCP configurations, dependencies, IaC, secrets, and CI workflows. <a href="https://github.com/Nox-HQ/nox/releases/tag/v1.70.0">Version 1.70.0</a> adds hidden-instruction checks for MCP tool descriptions and GitHub Actions cache-poisoning and pwn-request checks (Nov 2026). Validate findings and remediation locally.</p>
     <a class="button" href="https://github.com/Nox-HQ/nox">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="AI,Evaluation,Tool use">
+    <div class="card__meta"><span class="category-chip">AI</span><span class="category-chip">Evaluation</span></div>
+    <h3>ViKernel Scanner</h3>
+    <p>Apache-2.0 evaluator that gives an AI model mock file, mail, web, shell, and payment tools, then records attempted calls under attack checks and normal-work controls (Nov 2026). Nothing real executes. The free edition covers four of six domains and retrieves its check set from a central service, so a grade is not a general security certification.</p>
+    <a class="button" href="https://github.com/final-bench/vikernel-scanner">Visit source</a>
+  </article>
 </div>
 </section>
 
