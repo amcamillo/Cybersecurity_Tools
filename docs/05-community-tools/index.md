@@ -17,7 +17,7 @@ permalink: /community-tools/
   <article class="card card--featured" data-filter-item data-tags="Green,Intelligence">
     <div class="card__meta"><span class="team-chip team-chip--green">Green</span><span class="category-chip">Intelligence</span></div>
     <h3>MISP</h3>
-    <p>Threat-intelligence sharing and workflows. Version 2.5.52 is a major security release and requires Python 3.11+; <a href="https://github.com/MISP/misp-modules/releases/tag/v3.1.5">Modules 3.1.5</a> expands DFIR, threat-hunting, and intelligence interoperability.</p>
+    <p>Threat-intelligence sharing and workflows. Version 2.5.52 is a major security release and requires Python 3.11+; <a href="https://github.com/MISP/misp-modules/releases/tag/v3.1.6">Modules 3.1.6</a> adds cloud and identity audit-log importers, background intelligence gathering, and WARC/WACZ/HAR evidence import.</p>
     <a class="button" href="https://github.com/MISP/MISP/releases/tag/v2.5.52">Visit source</a>
   </article>
   <article class="card" data-filter-item data-tags="Green,Knowledge base">

@@ -187,7 +187,7 @@ Categories:
 
 👩‍💻 Open Source
 - Threat intelligence and community sharing
-  1. MISP https://www.misp-project.org/ (2.5.52 is a major security release requiring Python 3.11+; Modules 3.1.5 adds DFIR, threat-hunting, KQL/YARA, and STIX 2.1 integrations—validate imported mappings and provenance)
+  1. MISP https://www.misp-project.org/ (2.5.52 is a major security release requiring Python 3.11+; [Modules 3.1.6](https://github.com/MISP/misp-modules/releases/tag/v3.1.6) adds cloud and identity audit-log importers, background intelligence gathering, and WARC/WACZ/HAR evidence import—review integration configuration and validate imported mappings and provenance)
 
 - OSINT dashboards
   1. Crucix https://github.com/calesthio/Crucix (local research only; no auth by default, bind to 127.0.0.1)
