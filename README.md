@@ -116,6 +116,9 @@ Categories:
 - Cloud security assessment
   1. CISA ScubaGear and ScubaGoggles https://www.cisa.gov/news-events/news/cisa-publishes-significant-updates-scubagear-and-scubagoggles (M365 and Google Workspace secure-configuration baseline assessment tools; v2.0/v1.1.0)
 
+- Linux runtime protection
+  1. Shirudo https://github.com/shirudo-dev/shirudo (BSD-2-Clause pre-release eBPF security platform from OpenAI and Cisco for signed live mitigations and TPM-measured verification; production targets currently require its kernel patches, signed-loader ABI, and TPM 2.0, and vendor demonstrations are not independent validation)
+
 - Linux DFIR
   1. Iwatobi https://github.com/Yamato-Security/iwatobi (AGPL-3.0 native Sigma scanner and timeline generator for Linux text logs; first release Oct 2026, validate in your environment)
 

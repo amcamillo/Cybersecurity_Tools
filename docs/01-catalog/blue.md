@@ -248,5 +248,11 @@ permalink: /catalog/blue/
     <p>Web application firewall and runtime-security stack whose control plane, dashboard, host agent, and <a href="https://github.com/Wafio/wafio-agent-waf">Rust reverse-proxy agent</a> are now published under open-source licenses (Nov 2026). Version 2 removes OWASP CRS in favor of WAFio's semantic engines; treat its performance figures as vendor-run and tune engines in log mode before blocking.</p>
     <a class="button" href="https://wafio.cloud/blog/wafio-2-released-rust-waf-agent-open-source">Visit announcement</a>
   </article>
+  <article class="card" data-filter-item data-tags="Blue,Linux,Runtime security,eBPF">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">Runtime security</span></div>
+    <h3>Shirudo</h3>
+    <p>BSD-2-Clause pre-release eBPF security platform from OpenAI and Cisco for signed live mitigations and TPM-measured verification (Nov 2026). Production targets currently require Shirudo's kernel patches, signed-loader ABI, and TPM 2.0; the published exploit-blocking demonstrations are vendor-run, not independent validation.</p>
+    <a class="button" href="https://github.com/shirudo-dev/shirudo">Visit source</a>
+  </article>
 </div>
 </section>
