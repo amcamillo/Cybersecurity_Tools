@@ -32,6 +32,12 @@ permalink: /detection-engineering/
     <p>Splunk search reference and guidance for production-ready analytics.</p>
     <a class="button" href="{{ '/detection-engineering/splunk/' | relative_url }}">Explore SPL</a>
   </article>
+  <article class="card" data-filter-item data-tags="Cross-platform,Detections,AI security,MITRE ATLAS">
+    <div class="card__meta"><span class="category-chip">Cross-platform</span><span class="category-chip">Detections</span></div>
+    <h3>Elastic AI security detection rules</h3>
+    <p>Elastic's Nov 2026 collection covers coding agents, MCP servers, AI platforms, prompt credential leakage, jailbreak activity, and stolen model keys with 143 SIEM rules mapped to MITRE ATLAS and ATT&amp;CK. Source is published in the <a href="https://github.com/elastic/detection-rules">detection-rules repository</a>. The announcement applies to Elastic Cloud Serverless; hosted and self-managed 9.6 availability was expected in early December. Enable only rules supported by local telemetry, then test and tune them.</p>
+    <a class="button" href="https://www.elastic.co/security-labs/blog/ai-security-detection-rules-coding-agents-mcp">Visit source</a>
+  </article>
 </div>
 </section>
 

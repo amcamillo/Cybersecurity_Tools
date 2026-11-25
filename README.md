@@ -228,3 +228,7 @@ Categories:
 
 - Published detections
   1. PHP2Shell analytic story (Splunk Threat Research Team) https://research.splunk.com/stories/php2shell/
+
+### Cross-platform
+- Published detection collections
+  1. Elastic AI security detection rules https://www.elastic.co/security-labs/blog/ai-security-detection-rules-coding-agents-mcp (Elastic describes 143 SIEM rules for coding agents, MCP servers, AI platforms, prompt credential leakage, jailbreak activity, and stolen model keys, mapped to MITRE ATLAS and ATT&CK; source is published in the [detection-rules repository](https://github.com/elastic/detection-rules). The Nov 2026 announcement applies to Elastic Cloud Serverless, with hosted and self-managed 9.6 availability expected in early December; enable only rules backed by collected telemetry and tune them locally.)
