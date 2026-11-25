@@ -38,6 +38,12 @@ permalink: /architecture/
     <p>UK NCSC TLS guidance v1.2 adds hybrid and pure post-quantum TLS 1.3 profiles (e.g. X25519MLKEM768) following RFC 10024. Only TLS 1.3 supports PQC, so plan TLS 1.2 migration now (Oct 2026).</p>
     <a class="button" href="https://www.ncsc.gov.uk/guidance/using-tls-to-protect-data">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Architecture,Governance,Product security,CRA">
+    <div class="card__meta"><span class="category-chip">Architecture</span><span class="category-chip">Product security</span></div>
+    <h3>EN 40000-1-2:2026 product cybersecurity lifecycle</h3>
+    <p>The first foundational European standard supporting the Cyber Resilience Act defines generic cybersecurity principles, baseline product-risk management requirements, and lifecycle activities from design through end of support and decommissioning (available 18 Nov 2026). Its <a href="https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-11-19-cra-standards-en-40000-1-1-and-en-40000-1-2/">announcement and scope are public</a>; the complete standard is obtained through national standards catalogues.</p>
+    <a class="button" href="https://standards.cencenelec.eu/ords/f?p=205:110:0::::FSP_PROJECT,FSP_ORG_ID:81335,2307986&amp;cs=1D72BA048927BF4E6076BA309587EA01A">View catalogue entry</a>
+  </article>
   <article class="card" data-filter-item data-tags="Architecture,Identity,AI">
     <div class="card__meta"><span class="category-chip">Architecture</span><span class="category-chip">Identity</span></div>
     <h3>NIST: Design Tenets for Agent Identity Management Systems</h3>
