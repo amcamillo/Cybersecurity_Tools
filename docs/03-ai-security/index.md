@@ -44,6 +44,12 @@ permalink: /ai-security/
     <p>OWASP Artificial Intelligence Security Verification Standard: testable requirements for AI-enabled applications across 12 chapters (incl. agentic orchestration and MCP), at three levels aligned with ASVS. v1.01 has 213 active requirements; cite the version with each requirement ID (Oct 2026).</p>
     <a class="button" href="https://github.com/OWASP/AISVS/releases">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="AI,Methodology,Data security,Architecture">
+    <div class="card__meta"><span class="category-chip">AI</span><span class="category-chip">Methodology</span></div>
+    <h3>OWASP GenAI Data Security Best Practices v2.0 – Part 3</h3>
+    <p>OWASP guidance with security architecture patterns, tiered controls, implementation guidance, and compliance mappings for training and fine-tuning pipelines, RAG, AI memory, vector stores, and embeddings (Nov 2026). Apply the controls according to local data flows, trust boundaries, and deployment risks.</p>
+    <a class="button" href="https://genai.owasp.org/resource/genai-data-security-best-practices-v2-part-3/">Visit source</a>
+  </article>
   <article class="card" data-filter-item data-tags="AI,Supply chain,Scanner">
     <div class="card__meta"><span class="category-chip">AI</span><span class="category-chip">Supply chain</span></div>
     <h3>NVIDIA SkillSpector</h3>
