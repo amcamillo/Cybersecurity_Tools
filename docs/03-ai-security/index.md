@@ -116,6 +116,12 @@ permalink: /ai-security/
     <p>Apache-2.0 evaluator that gives an AI model mock file, mail, web, shell, and payment tools, then records attempted calls under attack checks and normal-work controls (Nov 2026). Nothing real executes. The free edition covers four of six domains and retrieves its check set from a central service, so a grade is not a general security certification.</p>
     <a class="button" href="https://github.com/final-bench/vikernel-scanner">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="AI,Sandbox,Policy">
+    <div class="card__meta"><span class="category-chip">AI</span><span class="category-chip">Sandbox</span></div>
+    <h3>cplt</h3>
+    <p>MIT-licensed kernel-enforced sandbox for AI coding agents using macOS Seatbelt or Linux Landlock, seccomp-BPF, and optional Bubblewrap, with repository policy plus Git and GitHub CLI guards. Its <a href="https://github.com/navikt/cplt/releases/tag/2026.11.26-153933-ab2207b">26 Nov 2026 release</a> launches the sandbox with only allowlisted environment variables. Review the documented platform limitations and every explicit access grant.</p>
+    <a class="button" href="https://github.com/navikt/cplt">Visit source</a>
+  </article>
 </div>
 </section>
 
