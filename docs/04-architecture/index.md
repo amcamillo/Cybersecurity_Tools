@@ -56,6 +56,12 @@ permalink: /architecture/
     <p>Non-binding Bank of England, PRA, and FCA practices for AI cyber resilience cover governance, threat modeling, controlled tool access, validation, human review, zero trust, segmentation, least privilege, monitoring, and recovery (Nov 2026).</p>
     <a class="button" href="https://www.bankofengland.co.uk/prudential-regulation/publication/2026/november/effective-practices-cyber-risk-and-resilience-management-relating-to-artificial-intelligence">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Architecture,AI,API,WAF,Cloud">
+    <div class="card__meta"><span class="category-chip">Architecture</span><span class="category-chip">AI security</span></div>
+    <h3>AWS API Portal and WAF AI Security</h3>
+    <p>Generally available AWS capabilities for inventorying REST, LLM, MCP, and A2A endpoints and applying protocol checks plus optional Amazon Bedrock Guardrails inspection to prompts and responses (23 Nov 2026). Start managed rules in count mode and review labels; Guardrails call failures are allowed unless configured to block, and response checks are limited to supported resources, Regions, and inspected body sizes.</p>
+    <a class="button" href="https://aws.amazon.com/blogs/security/introducing-api-and-ai-security-on-aws-from-discovery-to-protection/">Visit source</a>
+  </article>
   <article class="card" data-filter-item data-tags="Architecture,OT,Critical infrastructure">
     <div class="card__meta"><span class="category-chip">Architecture</span><span class="category-chip">OT</span></div>
     <h3>CISA: Dams Sector Cybersecurity Framework guidance</h3>
