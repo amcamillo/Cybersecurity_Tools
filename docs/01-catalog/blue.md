@@ -212,6 +212,12 @@ permalink: /catalog/blue/
     <p>MIT-licensed Go CLI for pattern- and entropy-based secret detection in Git history, directories, and stdin. It supports configurable rules, baselines, decoding and archive limits, redaction, and SARIF/JSON output. It is an offline pre-commit and CI gate that complements active verification; the separate Gitleaks Action may have different terms.</p>
     <a class="button" href="https://github.com/gitleaks/gitleaks">Visit source</a>
   </article>
+  <article class="card" data-filter-item data-tags="Blue,Secrets,Git,AI security,CI">
+    <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">Secrets</span></div>
+    <h3>ggshield</h3>
+    <p>MIT-licensed CLI, pre-commit hook, and CI integration for detecting and validating hardcoded secrets. <a href="https://github.com/GitGuardian/ggshield/releases/tag/v1.57.0">Version 1.57.0</a> adds an AI-hook fail-open/fail-closed policy and makes unperformed scans fail instead of reporting no secrets (Nov 2026). The AI-hook policy defaults to allow, so configure it explicitly when enforcement is required.</p>
+    <a class="button" href="https://github.com/GitGuardian/ggshield">Visit source</a>
+  </article>
   <article class="card" data-filter-item data-tags="Blue,AppSec,SAST">
     <div class="card__meta"><span class="team-chip team-chip--blue">Blue</span><span class="category-chip">AppSec</span></div>
     <h3>Semgrep Community Edition</h3>

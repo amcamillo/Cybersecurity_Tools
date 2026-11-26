@@ -114,6 +114,7 @@ Categories:
   1. omerta https://github.com/shcherbak-ai/omerta (MIT; checks whether values from untracked env files appear in staged changes, tracked files, or git history)
   2. GitHub secret scanning on demand https://github.blog/changelog/2026-11-17-secret-scanning-on-demand-for-developers-and-agents/ (public preview for Copilot security review; opt-in, scans current changes rather than repository history, and may consume Secret Protection AI credits)
   3. Gitleaks https://github.com/gitleaks/gitleaks (MIT CLI; pattern/entropy-based offline secret detection for Git history, directories, and stdin with configurable rules, baselines, redaction, and SARIF/JSON output; the separate Gitleaks Action may have different terms)
+  4. ggshield https://github.com/GitGuardian/ggshield (MIT CLI, pre-commit hook, and CI integration for detecting and validating hardcoded secrets; [v1.57.0](https://github.com/GitGuardian/ggshield/releases/tag/v1.57.0) adds an AI-hook fail-open/fail-closed policy and makes unperformed scans fail instead of reporting no secrets; the AI-hook policy defaults to allow, so set it explicitly for enforcement)
 
 - Cloud security assessment
   1. CISA ScubaGear and ScubaGoggles https://www.cisa.gov/news-events/news/cisa-publishes-significant-updates-scubagear-and-scubagoggles (M365 and Google Workspace secure-configuration baseline assessment tools; v2.0/v1.1.0)
